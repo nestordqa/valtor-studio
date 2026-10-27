@@ -1,0 +1,486 @@
+<title>Kroma Studio Brand Book</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: manual en columna única de 960px, secciones separadas por reglas finas; diseño dark-first fijo (la marca es dark nativo) */
+:root{
+  color-scheme:dark;
+  --k-bg:#0A0812; --k-surface:#13101F; --k-elevated:#1C1830;
+  --k-purple:#7C3AED; --k-electric:#A855F7;
+  --k-fuchsia:#FF2BD6; --k-magenta:#E0007A;
+  --k-text:#F5F3FF; --k-text-2:#B8B3CC; --k-muted:#5E5873;
+  --k-border:rgba(184,179,204,.12);
+  --k-grad-primary:linear-gradient(135deg,#7C3AED 0%,#C026D3 55%,#FF2BD6 100%);
+  --k-grad-text:linear-gradient(90deg,#A855F7 0%,#FF2BD6 100%);
+  --font-display:"Sora",ui-sans-serif,system-ui,sans-serif;
+  --font-body:"Manrope",ui-sans-serif,system-ui,sans-serif;
+  --font-mono:"JetBrains Mono",ui-monospace,Consolas,monospace;
+}
+*{box-sizing:border-box}
+body{background:var(--k-bg);color:var(--k-text);font-family:var(--font-body);font-size:16px;line-height:1.6;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.wrap{max-width:960px;margin:0 auto;padding-block:48px 96px}
+h1,h2,h3,h4{font-family:var(--font-display);text-wrap:balance;margin:0}
+h2{font-size:2rem;font-weight:700;letter-spacing:-.02em}
+h3{font-size:1.25rem;font-weight:600;margin-top:32px}
+p{margin:0;max-width:65ch;color:var(--k-text-2)}
+.eyebrow{font-family:var(--font-mono);font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;color:var(--k-electric)}
+section{border-top:1px solid var(--k-border);padding-block:56px;display:flex;flex-direction:column;gap:16px}
+.grad-text{background:var(--k-grad-text);-webkit-background-clip:text;background-clip:text;color:transparent}
+ul{margin:0;padding-left:1.2em;color:var(--k-text-2);max-width:68ch}
+li{margin-block:6px} li strong{color:var(--k-text)}
+code{font-family:var(--font-mono);font-size:.85em;color:var(--k-fuchsia)}
+pre{margin:0;background:var(--k-surface);border:1px solid var(--k-border);border-radius:12px;padding:20px;overflow-x:auto;
+  font-family:var(--font-mono);font-size:.8rem;line-height:1.7;color:var(--k-text-2)}
+.codewrap{position:relative;min-width:0}
+.copy{position:absolute;top:10px;right:10px;font:500 .72rem var(--font-mono);background:var(--k-elevated);color:var(--k-text-2);
+  border:1px solid var(--k-border);border-radius:6px;padding:4px 10px;cursor:pointer}
+.copy:hover{color:var(--k-text)}
+:focus-visible{outline:2px solid var(--k-fuchsia);outline-offset:2px}
+
+/* Hero */
+.hero{display:grid;grid-template-columns:auto 1fr;gap:40px;align-items:center;padding-block:24px 56px}
+.hero h1{font-size:clamp(2.4rem,6vw,4rem);font-weight:800;letter-spacing:-.035em;line-height:1.02}
+.hero p{margin-top:16px;font-size:1.1rem}
+@media (max-width:640px){.hero{grid-template-columns:1fr}}
+
+/* Logo boards */
+.boards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+.board{background:var(--k-surface);border:1px solid var(--k-border);border-radius:16px;padding:28px;display:flex;flex-direction:column;gap:20px;min-width:0}
+.board .stage{min-height:150px;display:flex;align-items:center;justify-content:center;gap:14px}
+.board.light .stage{background:#F5F3FF;border-radius:10px}
+.cap{font-family:var(--font-mono);font-size:.72rem;color:var(--k-muted);letter-spacing:.06em;text-transform:uppercase}
+.word{font-family:var(--font-display);font-weight:700;letter-spacing:-.02em;line-height:1}
+.word small{display:block;font-family:var(--font-mono);font-weight:400;font-size:.32em;letter-spacing:.42em;color:var(--k-text-2);margin-top:.5em}
+.clear{position:relative;padding:28px;border:1px dashed var(--k-fuchsia);border-radius:4px}
+.clear::after{content:"x";position:absolute;top:4px;left:8px;font:500 .7rem var(--font-mono);color:var(--k-fuchsia)}
+
+/* Color */
+.swatches{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px}
+.sw{border:1px solid var(--k-border);border-radius:12px;overflow:hidden;background:var(--k-surface)}
+.sw .chip{height:96px}
+.sw .meta{padding:12px 14px;font-family:var(--font-mono);font-size:.72rem;line-height:1.7;color:var(--k-text-2)}
+.sw .meta b{display:block;font-family:var(--font-body);font-size:.9rem;color:var(--k-text);margin-bottom:4px}
+.grads{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
+.grad{height:110px;border-radius:12px;padding:14px;display:flex;align-items:flex-end;font:500 .75rem var(--font-mono);color:#fff}
+
+/* Type */
+.typescale{display:flex;flex-direction:column;border:1px solid var(--k-border);border-radius:16px;overflow:hidden}
+.trow{display:grid;grid-template-columns:150px 1fr;gap:20px;padding:18px 22px;border-bottom:1px solid var(--k-border);align-items:baseline}
+.trow:last-child{border-bottom:0}
+.trow .spec{font-family:var(--font-mono);font-size:.7rem;color:var(--k-muted);line-height:1.6}
+.trow .spec b{color:var(--k-electric);font-weight:500}
+.trow .sample{min-width:0;overflow-wrap:anywhere}
+@media (max-width:560px){.trow{grid-template-columns:1fr;gap:6px}}
+table{border-collapse:collapse;width:100%;font-size:.88rem;font-variant-numeric:tabular-nums}
+th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--k-border)}
+th{font-family:var(--font-mono);font-size:.7rem;text-transform:uppercase;letter-spacing:.1em;color:var(--k-muted);font-weight:500}
+td{color:var(--k-text-2)} td:first-child{color:var(--k-text);font-weight:600}
+.tablewrap{overflow-x:auto}
+
+/* Componentes demo */
+.k-btn{font:600 .95rem/1 var(--font-body);padding:14px 24px;border-radius:10px;border:1px solid transparent;cursor:pointer;
+  transition:transform .15s ease,box-shadow .2s ease,background .2s ease,border-color .2s ease;color:var(--k-text)}
+.k-btn--primary{background:var(--k-grad-primary);box-shadow:0 0 0 rgba(255,43,214,0)}
+.k-btn--primary:hover,.k-btn--primary.is-hover{box-shadow:0 0 24px rgba(255,43,214,.45),0 0 2px rgba(255,255,255,.4) inset;transform:translateY(-1px)}
+.k-btn--primary:active,.k-btn--primary.is-active{transform:translateY(0) scale(.98);box-shadow:0 0 10px rgba(255,43,214,.3)}
+.k-btn--secondary{background:transparent;border-color:var(--k-purple);color:var(--k-text)}
+.k-btn--secondary:hover,.k-btn--secondary.is-hover{border-color:var(--k-electric);background:rgba(124,58,237,.12);box-shadow:0 0 18px rgba(168,85,247,.3)}
+.k-btn--secondary:active,.k-btn--secondary.is-active{background:rgba(124,58,237,.22);transform:scale(.98)}
+.k-btn--ghost{background:transparent;color:var(--k-text-2)}
+.k-btn--ghost:hover,.k-btn--ghost.is-hover{color:var(--k-text);background:var(--k-elevated)}
+.k-btn--ghost:active,.k-btn--ghost.is-active{background:#252040}
+.k-btn:disabled{opacity:.38;cursor:not-allowed;box-shadow:none;transform:none;filter:grayscale(.6)}
+.statesgrid{display:grid;grid-template-columns:110px repeat(4,1fr);gap:12px;align-items:center;min-width:640px}
+.statesgrid .cap{text-align:center} .statesgrid .cap:first-child{text-align:left}
+.k-card{position:relative;background:linear-gradient(180deg,rgba(28,24,48,.7),rgba(19,16,31,.7));border:1px solid rgba(168,85,247,.18);
+  border-radius:16px;padding:24px;backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);transition:border-color .25s,box-shadow .25s,transform .25s}
+.k-card:hover{border-color:rgba(255,43,214,.45);box-shadow:0 0 0 1px rgba(255,43,214,.15),0 20px 60px -20px rgba(124,58,237,.55);transform:translateY(-2px)}
+.k-card h4{font-size:1.1rem;margin-bottom:8px}
+.cardstage{position:relative;padding:36px;border-radius:20px;background:
+  radial-gradient(400px 200px at 20% 0%,rgba(124,58,237,.35),transparent 70%),
+  radial-gradient(300px 200px at 90% 100%,rgba(255,43,214,.25),transparent 70%),var(--k-bg);
+  border:1px solid var(--k-border);display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+.tag{display:inline-block;font:500 .68rem var(--font-mono);letter-spacing:.08em;text-transform:uppercase;padding:4px 8px;border-radius:6px;
+  background:rgba(255,43,214,.12);color:var(--k-fuchsia);margin-bottom:12px}
+.icons{display:flex;gap:14px;flex-wrap:wrap}
+.ic{width:56px;height:56px;border-radius:12px;background:var(--k-surface);border:1px solid var(--k-border);display:flex;align-items:center;justify-content:center}
+.ic svg{width:24px;height:24px;stroke:var(--k-text);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.ic.on{border-color:rgba(255,43,214,.4)} .ic.on svg{stroke:var(--k-fuchsia);filter:drop-shadow(0 0 6px rgba(255,43,214,.6))}
+
+/* Instagram */
+.ig{display:grid;grid-template-columns:repeat(3,1fr);gap:4px;max-width:420px;border-radius:12px;overflow:hidden}
+.ig div{aspect-ratio:4/5;display:flex;align-items:flex-end;padding:10px;font:600 .62rem var(--font-mono);letter-spacing:.06em;text-transform:uppercase;color:var(--k-text);max-width:100%}
+.ig .a{background:var(--k-grad-primary)} .ig .b{background:var(--k-surface)} .ig .c{background:var(--k-elevated)}
+.ig .d{background:#0A0812;border:1px solid rgba(168,85,247,.3)}
+.igrow{display:grid;grid-template-columns:auto 1fr;gap:32px;align-items:start}
+.igrow > div{min-width:0}
+@media (max-width:720px){.igrow{grid-template-columns:1fr}}
+.tpl{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+.tpl .k-card{padding:18px}
+.tpl .k-card p{font-size:.88rem}
+footer{border-top:1px solid var(--k-border);padding-top:32px;font:400 .75rem var(--font-mono);color:var(--k-muted)}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+<div class="wrap">
+
+<header class="hero">
+  <svg width="140" height="140" viewBox="0 0 120 120" aria-label="Isotipo Kroma Studio">
+    <defs><linearGradient id="kg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7C3AED"/><stop offset=".55" stop-color="#C026D3"/><stop offset="1" stop-color="#FF2BD6"/></linearGradient></defs>
+    <rect x="0" y="0" width="120" height="120" rx="28" fill="#13101F"/>
+    <rect x="30" y="26" width="13" height="68" rx="2" fill="url(#kg)"/>
+    <path d="M90 26 L57 60 L90 94" fill="none" stroke="url(#kg)" stroke-width="13" stroke-linejoin="miter" stroke-linecap="square"/>
+    <circle cx="57" cy="60" r="6" fill="#F5F3FF"/>
+  </svg>
+  <div>
+    <div class="eyebrow">Brand Book &amp; Design System · v1.0 · Oct 2026</div>
+    <h1>Kroma <span class="grad-text">Studio</span></h1>
+    <p>Construimos la tecnología y diseñamos la imagen completa para hacer crecer negocios. Este manual define la identidad visual y el sistema de UI dark-mode del estudio.</p>
+  </div>
+</header>
+
+<!-- 1. LOGO -->
+<section id="logo">
+  <div class="eyebrow">01 · Concepto y logotipo</div>
+  <h2>La K es código y forma a la vez</h2>
+  <p>El isotipo descompone la K en dos piezas que representan a la dupla fundadora. El <strong style="color:var(--k-text)">fuste vertical</strong> es estructura: la columna de un layout, el cursor de un editor, la ingeniería. El <strong style="color:var(--k-text)">chevron &lt;</strong> es la etiqueta de apertura de código y, al mismo tiempo, un trazo de diseño industrial. Donde los dos brazos se unen hay un <strong style="color:var(--k-text)">nodo blanco</strong>: el punto donde tecnología y diseño se encuentran. Es el único elemento que nunca cambia de color.</p>
+
+  <h3>Conceptos explorados</h3>
+  <ul>
+    <li><strong>A · Stem + Chevron (elegido):</strong> <code>| + &lt;</code> = K. Lectura inmediata para devs y para clientes no técnicos. Funciona a 16px.</li>
+    <li><strong>B · Nodo-grafo:</strong> K trazada como un grafo de 4 nodos conectados (arquitectura cloud / microservicios). Para ilustraciones y motion, no como logo principal.</li>
+    <li><strong>C · Prisma Kroma:</strong> la K inscrita en un hexágono que refracta el gradiente morado→fucsia (de <em>chroma</em>, color). Para patrones de fondo y packaging.</li>
+    <li><strong>D · Grid modular:</strong> K construida sobre una retícula 8×8 (píxel / punto de diseño). Ideal para animaciones de carga (los módulos se ensamblan).</li>
+  </ul>
+
+  <h3>Variaciones</h3>
+  <div class="boards">
+    <div class="board"><div class="stage">
+      <svg width="52" height="52" viewBox="0 0 120 120"><rect x="30" y="26" width="13" height="68" rx="2" fill="url(#kg)"/><path d="M90 26 L57 60 L90 94" fill="none" stroke="url(#kg)" stroke-width="13" stroke-linecap="square"/><circle cx="57" cy="60" r="6" fill="#F5F3FF"/></svg>
+      <div class="word" style="font-size:2rem">KROMA<small>STUDIO</small></div>
+    </div><div class="cap">Isologo horizontal · principal</div></div>
+
+    <div class="board"><div class="stage" style="flex-direction:column">
+      <svg width="64" height="64" viewBox="0 0 120 120"><rect x="30" y="26" width="13" height="68" rx="2" fill="url(#kg)"/><path d="M90 26 L57 60 L90 94" fill="none" stroke="url(#kg)" stroke-width="13" stroke-linecap="square"/><circle cx="57" cy="60" r="6" fill="#F5F3FF"/></svg>
+      <div class="word" style="font-size:1.6rem;text-align:center">KROMA<small>STUDIO</small></div>
+    </div><div class="cap">Isologo vertical · portadas, merch</div></div>
+
+    <div class="board"><div class="stage">
+      <svg width="72" height="72" viewBox="0 0 120 120"><rect width="120" height="120" rx="28" fill="url(#kg)"/><rect x="30" y="26" width="13" height="68" rx="2" fill="#0A0812"/><path d="M90 26 L57 60 L90 94" fill="none" stroke="#0A0812" stroke-width="13" stroke-linecap="square"/><circle cx="57" cy="60" r="6" fill="#F5F3FF"/></svg>
+      <svg width="72" height="72" viewBox="0 0 120 120"><circle cx="60" cy="60" r="60" fill="#13101F"/><rect x="34" y="30" width="12" height="60" rx="2" fill="url(#kg)"/><path d="M86 30 L58 60 L86 90" fill="none" stroke="url(#kg)" stroke-width="12" stroke-linecap="square"/></svg>
+      <svg width="32" height="32" viewBox="0 0 120 120"><rect width="120" height="120" rx="24" fill="#7C3AED"/><rect x="28" y="24" width="18" height="72" fill="#fff"/><path d="M92 24 L58 60 L92 96" fill="none" stroke="#fff" stroke-width="18" stroke-linecap="square"/></svg>
+    </div><div class="cap">Isotipo · app icon · avatar RRSS · favicon</div></div>
+
+    <div class="board light"><div class="stage">
+      <svg width="48" height="48" viewBox="0 0 120 120"><rect x="30" y="26" width="13" height="68" rx="2" fill="#0A0812"/><path d="M90 26 L57 60 L90 94" fill="none" stroke="#0A0812" stroke-width="13" stroke-linecap="square"/><circle cx="57" cy="60" r="6" fill="#E0007A"/></svg>
+      <div class="word" style="font-size:1.8rem;color:#0A0812">KROMA<small style="color:#5E5873">STUDIO</small></div>
+    </div><div class="cap">Monocromo sobre claro · documentos, facturas</div></div>
+  </div>
+
+  <ul>
+    <li><strong>Wordmark:</strong> “KROMA” en Sora ExtraBold con tracking −20; “STUDIO” en JetBrains Mono Regular, tracking +420, alineado al ancho de KROMA.</li>
+    <li><strong>Favicon (16/32px):</strong> versión sin nodo y con trazos engrosados al 150 %; fondo morado sólido <code>#7C3AED</code> (el gradiente se ensucia a tamaños mínimos).</li>
+    <li><strong>Avatar RRSS:</strong> isotipo centrado en círculo <code>#13101F</code>, ocupando el 60 % del diámetro, sin nodo.</li>
+  </ul>
+
+  <h3>Área de respeto y escalabilidad</h3>
+  <div style="display:flex;gap:32px;flex-wrap:wrap;align-items:center">
+    <div class="clear"><svg width="60" height="60" viewBox="0 0 120 120"><rect x="30" y="26" width="13" height="68" rx="2" fill="url(#kg)"/><path d="M90 26 L57 60 L90 94" fill="none" stroke="url(#kg)" stroke-width="13" stroke-linecap="square"/><circle cx="57" cy="60" r="6" fill="#F5F3FF"/></svg></div>
+    <ul style="flex:1;min-width:260px">
+      <li><strong>Unidad x</strong> = ancho del fuste vertical de la K. Área de respeto mínima: <strong>1x</strong> en los cuatro lados (2x en piezas de gran formato).</li>
+      <li><strong>Tamaño mínimo:</strong> isologo horizontal 96px / 25 mm de ancho; isotipo 16px / 5 mm.</li>
+      <li><strong>Prohibido:</strong> rotar, deformar, cambiar el orden de colores del gradiente, añadir sombras duras, poner el nodo en otro color que no sea blanco (o magenta en monocromo claro), usar el gradiente sobre fondos medios o fotografías sin un overlay oscuro.</li>
+      <li><strong>Fondos permitidos:</strong> <code>--k-bg</code>, <code>--k-surface</code>, blanco <code>#F5F3FF</code> (solo versión monocroma) y fotografía con overlay ≥ 70 % de <code>#0A0812</code>.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- 2. COLOR -->
+<section id="color">
+  <div class="eyebrow">02 · Paleta de colores</div>
+  <h2>Neutros con sesgo violeta, acentos eléctricos</h2>
+  <p>Los fondos no son grises neutros: tienen un tinte violeta (hue 250–253°) para que morados y fucsias se sientan parte del mismo espacio. Proporción recomendada: <strong style="color:var(--k-text)">70 % neutros oscuros · 20 % texto · 10 % acentos</strong>.</p>
+
+  <h3>Backgrounds</h3>
+  <div class="swatches">
+    <div class="sw"><div class="chip" style="background:#0A0812"></div><div class="meta"><b>Void · dominante</b>#0A0812<br>rgb(10, 8, 18)<br>hsl(252, 38%, 5%)</div></div>
+    <div class="sw"><div class="chip" style="background:#13101F"></div><div class="meta"><b>Surface · cards</b>#13101F<br>rgb(19, 16, 31)<br>hsl(252, 32%, 9%)</div></div>
+    <div class="sw"><div class="chip" style="background:#1C1830"></div><div class="meta"><b>Elevated · hover</b>#1C1830<br>rgb(28, 24, 48)<br>hsl(250, 33%, 14%)</div></div>
+  </div>
+  <h3>Primary accent · Morados</h3>
+  <div class="swatches">
+    <div class="sw"><div class="chip" style="background:#7C3AED"></div><div class="meta"><b>Kroma Purple · principal</b>#7C3AED<br>rgb(124, 58, 237)<br>hsl(262, 83%, 58%)</div></div>
+    <div class="sw"><div class="chip" style="background:#A855F7;box-shadow:inset 0 0 40px rgba(255,255,255,.15)"></div><div class="meta"><b>Electric Violet · glow/hover</b>#A855F7<br>rgb(168, 85, 247)<br>hsl(271, 91%, 65%)</div></div>
+  </div>
+  <h3>Secondary accent · Fucsias</h3>
+  <div class="swatches">
+    <div class="sw"><div class="chip" style="background:#FF2BD6"></div><div class="meta"><b>Neon Fuchsia · highlight</b>#FF2BD6<br>rgb(255, 43, 214)<br>hsl(312, 100%, 58%)</div></div>
+    <div class="sw"><div class="chip" style="background:#E0007A"></div><div class="meta"><b>Magenta CTA · contraste</b>#E0007A<br>rgb(224, 0, 122)<br>hsl(327, 100%, 44%)</div></div>
+  </div>
+  <h3>Text &amp; contrast</h3>
+  <div class="swatches">
+    <div class="sw"><div class="chip" style="background:#F5F3FF"></div><div class="meta"><b>Text primary</b>#F5F3FF<br>rgb(245, 243, 255)<br>hsl(250, 100%, 98%)</div></div>
+    <div class="sw"><div class="chip" style="background:#B8B3CC"></div><div class="meta"><b>Text secondary</b>#B8B3CC<br>rgb(184, 179, 204)<br>hsl(252, 19%, 75%)</div></div>
+    <div class="sw"><div class="chip" style="background:#5E5873"></div><div class="meta"><b>Muted · bordes/placeholder</b>#5E5873<br>rgb(94, 88, 115)<br>hsl(253, 13%, 40%)</div></div>
+  </div>
+  <p>Contraste sobre <code>#0A0812</code>: texto primario ≈ 18:1, secundario ≈ 10:1 (AA/AAA). El muted (≈ 3:1) es solo para bordes, placeholders e iconos decorativos, nunca para texto de lectura.</p>
+
+  <h3>Gradientes</h3>
+  <div class="grads">
+    <div class="grad" style="background:linear-gradient(135deg,#7C3AED 0%,#C026D3 55%,#FF2BD6 100%)">--k-grad-primary · botones, isotipo</div>
+    <div class="grad" style="background:#0A0812;border:1px solid var(--k-border);font-size:1.6rem;font-family:var(--font-display);font-weight:800"><span class="grad-text">--k-grad-text</span></div>
+    <div class="grad" style="background:radial-gradient(120% 120% at 0% 0%,rgba(124,58,237,.55) 0%,transparent 55%),radial-gradient(100% 100% at 100% 100%,rgba(255,43,214,.35) 0%,transparent 60%),#0A0812">--k-grad-aurora · fondos hero</div>
+  </div>
+
+  <div class="codewrap"><button class="copy" type="button">Copiar</button><pre id="css-color">/* ===== Kroma Studio · Color tokens ===== */
+:root {
+  /* Backgrounds */
+  --k-bg:            #0A0812; /* hsl(252 38% 5%)   dominante */
+  --k-surface:       #13101F; /* hsl(252 32% 9%)   cards, módulos */
+  --k-elevated:      #1C1830; /* hsl(250 33% 14%)  hover, popovers */
+
+  /* Primary · Morados */
+  --k-purple:        #7C3AED; /* hsl(262 83% 58%) */
+  --k-electric:      #A855F7; /* hsl(271 91% 65%)  glow / hover */
+
+  /* Secondary · Fucsias */
+  --k-fuchsia:       #FF2BD6; /* hsl(312 100% 58%) highlight neón */
+  --k-magenta:       #E0007A; /* hsl(327 100% 44%) CTA de contraste */
+
+  /* Text */
+  --k-text:          #F5F3FF; /* hsl(250 100% 98%) */
+  --k-text-2:        #B8B3CC; /* hsl(252 19% 75%) */
+  --k-muted:         #5E5873; /* hsl(253 13% 40%) bordes, placeholders */
+
+  /* Líneas y glows */
+  --k-border:        rgba(184, 179, 204, 0.12);
+  --k-border-accent: rgba(168, 85, 247, 0.18);
+  --k-glow-purple:   0 0 24px rgba(168, 85, 247, 0.35);
+  --k-glow-fuchsia:  0 0 24px rgba(255, 43, 214, 0.45);
+
+  /* Gradientes */
+  --k-grad-primary: linear-gradient(135deg, #7C3AED 0%, #C026D3 55%, #FF2BD6 100%);
+  --k-grad-text:    linear-gradient(90deg, #A855F7 0%, #FF2BD6 100%);
+  --k-grad-aurora:
+    radial-gradient(120% 120% at 0% 0%, rgba(124, 58, 237, 0.55) 0%, transparent 55%),
+    radial-gradient(100% 100% at 100% 100%, rgba(255, 43, 214, 0.35) 0%, transparent 60%),
+    #0A0812;
+}
+
+.k-gradient-text {
+  background: var(--k-grad-text);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}</pre></div>
+</section>
+
+<!-- 3. TYPE -->
+<section id="type">
+  <div class="eyebrow">03 · Tipografía</div>
+  <h2>Geometría precisa, lectura cómoda</h2>
+  <ul>
+    <li><strong>Display / Headings: Sora</strong> (Google Fonts). Geométrica, con aperturas amplias y terminaciones rectas; se siente técnica sin ser fría. Pesos 600–800.</li>
+    <li><strong>Body / UI: Manrope</strong> (Google Fonts). Grotesca semi-condensada muy legible en pantalla; las cifras se alinean bien en tablas y dashboards. Pesos 400–700.</li>
+    <li><strong>Utility / Code: JetBrains Mono</strong> (opcional, tercera familia). Etiquetas, eyebrows, specs, snippets: el guiño al lado “Senior Software Engineer”.</li>
+  </ul>
+  <div class="typescale">
+    <div class="trow"><div class="spec"><b>H1</b><br>3.5rem / 56px<br>Sora 800 · lh 1.05<br>ls −0.035em</div><div class="sample" style="font:800 3.5rem/1.05 var(--font-display);letter-spacing:-.035em">Build. Brand. Grow.</div></div>
+    <div class="trow"><div class="spec"><b>H2</b><br>2.5rem / 40px<br>Sora 700 · lh 1.1<br>ls −0.025em</div><div class="sample" style="font:700 2.5rem/1.1 var(--font-display);letter-spacing:-.025em">Apps que se ven como se sienten</div></div>
+    <div class="trow"><div class="spec"><b>H3</b><br>1.75rem / 28px<br>Sora 600 · lh 1.2<br>ls −0.015em</div><div class="sample" style="font:600 1.75rem/1.2 var(--font-display);letter-spacing:-.015em">Arquitectura cloud escalable</div></div>
+    <div class="trow"><div class="spec"><b>H4</b><br>1.25rem / 20px<br>Sora 600 · lh 1.3</div><div class="sample" style="font:600 1.25rem/1.3 var(--font-display)">Identidad visual y branding</div></div>
+    <div class="trow"><div class="spec"><b>Body Large</b><br>1.125rem / 18px<br>Manrope 400 · lh 1.65</div><div class="sample" style="font:400 1.125rem/1.65 var(--font-body);color:var(--k-text-2)">Diseñamos y desarrollamos productos digitales completos, desde el logo hasta el deploy.</div></div>
+    <div class="trow"><div class="spec"><b>Body</b><br>1rem / 16px<br>Manrope 400 · lh 1.6</div><div class="sample" style="font:400 1rem/1.6 var(--font-body);color:var(--k-text-2)">Un equipo boutique: una ingeniera de software senior y una diseñadora industrial trabajando en el mismo sprint.</div></div>
+    <div class="trow"><div class="spec"><b>Caption</b><br>0.8125rem / 13px<br>Manrope 500 · lh 1.45</div><div class="sample" style="font:500 .8125rem/1.45 var(--font-body);color:var(--k-muted)">Proyecto 2026 · Fintech · iOS / Android</div></div>
+    <div class="trow"><div class="spec"><b>Overline / Label</b><br>0.75rem / 12px<br>JetBrains Mono 500<br>ls +0.14em · UPPER</div><div class="sample" style="font:500 .75rem/1.4 var(--font-mono);letter-spacing:.14em;text-transform:uppercase;color:var(--k-electric)">Case study · 04</div></div>
+  </div>
+  <p>En móvil (&lt; 640px) H1 baja a 2.5rem (40px), H2 a 2rem (32px) y H3 a 1.5rem (24px). Usa <code>clamp()</code> para interpolar entre ambos.</p>
+  <div class="codewrap"><button class="copy" type="button">Copiar</button><pre>/* ===== Kroma Studio · Typography tokens ===== */
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&amp;family=Manrope:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap');
+
+:root {
+  --font-display: 'Sora', ui-sans-serif, system-ui, sans-serif;
+  --font-body:    'Manrope', ui-sans-serif, system-ui, sans-serif;
+  --font-mono:    'JetBrains Mono', ui-monospace, 'SF Mono', Consolas, monospace;
+
+  /*            size                              line-height */
+  --fs-h1:      clamp(2.5rem, 1.6rem + 3.2vw, 3.5rem);   --lh-h1: 1.05;
+  --fs-h2:      clamp(2rem, 1.5rem + 1.8vw, 2.5rem);     --lh-h2: 1.1;
+  --fs-h3:      clamp(1.5rem, 1.35rem + 0.6vw, 1.75rem); --lh-h3: 1.2;
+  --fs-h4:      1.25rem;                                 --lh-h4: 1.3;
+  --fs-body-lg: 1.125rem;                                --lh-body-lg: 1.65;
+  --fs-body:    1rem;                                    --lh-body: 1.6;
+  --fs-caption: 0.8125rem;                               --lh-caption: 1.45;
+  --fs-label:   0.75rem;
+}
+
+h1 { font: 800 var(--fs-h1)/var(--lh-h1) var(--font-display); letter-spacing: -0.035em; }
+h2 { font: 700 var(--fs-h2)/var(--lh-h2) var(--font-display); letter-spacing: -0.025em; }
+h3 { font: 600 var(--fs-h3)/var(--lh-h3) var(--font-display); letter-spacing: -0.015em; }
+h4 { font: 600 var(--fs-h4)/var(--lh-h4) var(--font-display); }
+body       { font: 400 var(--fs-body)/var(--lh-body) var(--font-body); color: var(--k-text); background: var(--k-bg); }
+.body-lg   { font-size: var(--fs-body-lg); line-height: var(--lh-body-lg); }
+.caption   { font: 500 var(--fs-caption)/var(--lh-caption) var(--font-body); color: var(--k-muted); }
+.overline  { font: 500 var(--fs-label)/1.4 var(--font-mono); letter-spacing: 0.14em; text-transform: uppercase; color: var(--k-electric); }
+h1, h2, h3, h4 { text-wrap: balance; }</pre></div>
+</section>
+
+<!-- 4. UI -->
+<section id="ui">
+  <div class="eyebrow">04 · Sistema de componentes</div>
+  <h2>Botones</h2>
+  <p>Pasa el cursor sobre la columna Default para probar la interacción real. Una sola acción primaria por vista.</p>
+  <div class="tablewrap">
+    <div class="statesgrid">
+      <div></div><div class="cap">Default</div><div class="cap">Hover</div><div class="cap">Active</div><div class="cap">Disabled</div>
+      <div class="cap">Primario</div><button class="k-btn k-btn--primary">Empezar proyecto</button><button class="k-btn k-btn--primary is-hover">Empezar proyecto</button><button class="k-btn k-btn--primary is-active">Empezar proyecto</button><button class="k-btn k-btn--primary" disabled>Empezar proyecto</button>
+      <div class="cap">Secundario</div><button class="k-btn k-btn--secondary">Ver portafolio</button><button class="k-btn k-btn--secondary is-hover">Ver portafolio</button><button class="k-btn k-btn--secondary is-active">Ver portafolio</button><button class="k-btn k-btn--secondary" disabled>Ver portafolio</button>
+      <div class="cap">Ghost</div><button class="k-btn k-btn--ghost">Saber más</button><button class="k-btn k-btn--ghost is-hover">Saber más</button><button class="k-btn k-btn--ghost is-active">Saber más</button><button class="k-btn k-btn--ghost" disabled>Saber más</button>
+    </div>
+  </div>
+  <div class="codewrap"><button class="copy" type="button">Copiar</button><pre>/* ===== Buttons ===== */
+.k-btn {
+  font: 600 0.95rem/1 var(--font-body);
+  padding: 14px 24px;               /* sm: 10px 16px · lg: 18px 32px */
+  border-radius: 10px;
+  border: 1px solid transparent;
+  color: var(--k-text);
+  cursor: pointer;
+  transition: transform .15s ease, box-shadow .2s ease, background .2s ease, border-color .2s ease;
+}
+.k-btn:focus-visible { outline: 2px solid var(--k-fuchsia); outline-offset: 3px; }
+.k-btn:disabled { opacity: .38; cursor: not-allowed; box-shadow: none; transform: none; filter: grayscale(.6); }
+
+/* Primario · gradiente */
+.k-btn--primary { background: var(--k-grad-primary); }
+.k-btn--primary:hover  { box-shadow: var(--k-glow-fuchsia), inset 0 0 2px rgba(255,255,255,.4); transform: translateY(-1px); }
+.k-btn--primary:active { transform: scale(.98); box-shadow: 0 0 10px rgba(255,43,214,.3); }
+
+/* Secundario · outline morado */
+.k-btn--secondary { background: transparent; border-color: var(--k-purple); }
+.k-btn--secondary:hover  { border-color: var(--k-electric); background: rgba(124,58,237,.12); box-shadow: 0 0 18px rgba(168,85,247,.3); }
+.k-btn--secondary:active { background: rgba(124,58,237,.22); transform: scale(.98); }
+
+/* Terciario · ghost */
+.k-btn--ghost { background: transparent; color: var(--k-text-2); }
+.k-btn--ghost:hover  { color: var(--k-text); background: var(--k-elevated); }
+.k-btn--ghost:active { background: #252040; }
+
+/* Variante CTA sólida para contextos de alta conversión */
+.k-btn--cta { background: var(--k-magenta); }
+.k-btn--cta:hover { background: #F5148E; box-shadow: 0 0 20px rgba(224,0,122,.5); }</pre></div>
+
+  <h2 style="margin-top:40px">Cards y módulos</h2>
+  <p>Vidrio oscuro: fondo semitransparente, borde de 1px con opacidad y blur sobre un campo “aurora”. El glow aparece solo en hover, nunca en reposo, para que la interfaz no se sature.</p>
+  <div class="cardstage">
+    <div class="k-card"><span class="tag">Desarrollo</span><h4>Apps móviles</h4><p>React Native y Swift/Kotlin nativo, con arquitectura limpia y CI/CD desde el día uno.</p></div>
+    <div class="k-card"><span class="tag">Diseño</span><h4>Identidad visual</h4><p>Branding completo: logo, sistema de color, tipografía y guías de aplicación.</p></div>
+    <div class="k-card"><span class="tag">Cloud</span><h4>Arquitectura</h4><p>Infraestructura escalable en AWS / GCP, serverless y observabilidad.</p></div>
+  </div>
+  <div class="codewrap"><button class="copy" type="button">Copiar</button><pre>/* ===== Cards ===== */
+.k-card {
+  background: linear-gradient(180deg, rgba(28,24,48,.70), rgba(19,16,31,.70));
+  border: 1px solid var(--k-border-accent);      /* rgba(168,85,247,.18) */
+  border-radius: 16px;                            /* módulos grandes: 24px */
+  padding: 24px;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  transition: border-color .25s, box-shadow .25s, transform .25s;
+}
+.k-card:hover {
+  border-color: rgba(255,43,214,.45);
+  box-shadow: 0 0 0 1px rgba(255,43,214,.15),
+              0 20px 60px -20px rgba(124,58,237,.55);
+  transform: translateY(-2px);
+}
+
+/* Card destacada: borde con gradiente */
+.k-card--featured {
+  border: 1px solid transparent;
+  background:
+    linear-gradient(var(--k-surface), var(--k-surface)) padding-box,
+    var(--k-grad-primary) border-box;
+}
+
+/* Glow para iconos o imágenes PNG/SVG */
+.k-neon { filter: drop-shadow(0 0 6px rgba(255,43,214,.6)); }
+
+/* Escala de radios y espaciado (base 4px) */
+:root {
+  --r-sm: 6px; --r-md: 10px; --r-lg: 16px; --r-xl: 24px; --r-full: 999px;
+  --s-1: 4px; --s-2: 8px; --s-3: 12px; --s-4: 16px; --s-6: 24px; --s-8: 32px; --s-12: 48px; --s-16: 64px;
+}</pre></div>
+
+  <h2 style="margin-top:40px">Iconografía e ilustración</h2>
+  <ul>
+    <li><strong>Librería: Lucide Icons</strong> (fork mantenido de Feather, MIT, +1.500 iconos, paquetes para React, Vue, Flutter y SVG). Encaja con Sora: trazos de terminación redondeada y geometría de 24px.</li>
+    <li><strong>Especificación:</strong> grid 24×24, <code>stroke-width: 1.5</code> (2 a ≤ 16px), color <code>--k-text</code> en reposo; activo en <code>--k-fuchsia</code> con <code>drop-shadow</code> neón.</li>
+    <li><strong>Alternativa:</strong> Phosphor (peso “Light” o “Duotone” con el duotono en morado al 30 %) para piezas de marketing más ilustrativas.</li>
+    <li><strong>Ilustración:</strong> wireframes isométricos en línea fina (1px) sobre fondo void, con nodos y conexiones en gradiente. Nada de ilustraciones de personajes planos genéricos. Los renders 3D, si se usan, en vidrio/acrílico translúcido con luz morada y fucsia.</li>
+  </ul>
+  <div class="icons" aria-label="Muestra de iconos">
+    <div class="ic"><svg viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div>
+    <div class="ic"><svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg></div>
+    <div class="ic"><svg viewBox="0 0 24 24"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></svg></div>
+    <div class="ic on"><svg viewBox="0 0 24 24"><circle cx="13.5" cy="6.5" r=".5"/><circle cx="17.5" cy="10.5" r=".5"/><circle cx="8.5" cy="7.5" r=".5"/><circle cx="6.5" cy="12.5" r=".5"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.93 0 1.65-.75 1.65-1.69 0-.44-.18-.84-.44-1.13-.29-.29-.44-.65-.44-1.13a1.64 1.64 0 0 1 1.67-1.67h2c3.05 0 5.56-2.5 5.56-5.55C21.97 6.01 17.46 2 12 2z"/></svg></div>
+    <div class="ic"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
+    <div class="ic"><svg viewBox="0 0 24 24"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg></div>
+  </div>
+</section>
+
+<!-- 5. SOCIAL -->
+<section id="social">
+  <div class="eyebrow">05 · Redes sociales y portafolio</div>
+  <h2>Instagram como vitrina de producto</h2>
+  <div class="igrow">
+    <div class="ig" aria-label="Ejemplo de grid de feed">
+      <div class="a">Hook</div><div class="b">Case · app</div><div class="d">Tip dev</div>
+      <div class="d">Brand reveal</div><div class="a">Quote</div><div class="b">Mockup</div>
+      <div class="b">Carrusel</div><div class="d">Proceso</div><div class="a">CTA</div>
+    </div>
+    <div>
+      <h3 style="margin-top:0">Ritmo del feed</h3>
+      <ul>
+        <li><strong>Patrón diagonal:</strong> una pieza en gradiente cada 3 publicaciones, formando una diagonal que se repite cada 9. El resto alterna Surface (fotos/mockups) y Void con borde (texto).</li>
+        <li><strong>Formato:</strong> 1080×1350 (4:5). Zona segura de 1080×1080 al centro para el recorte del grid.</li>
+        <li><strong>Mix de contenido:</strong> 40 % casos de estudio · 30 % educación técnica/diseño · 20 % proceso y equipo · 10 % oferta/CTA.</li>
+        <li><strong>Firma fija:</strong> isotipo 48px abajo a la izquierda + <code>@kromastudio</code> en JetBrains Mono 20px abajo a la derecha, ambos a 64px de los bordes.</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3>Plantillas clave</h3>
+  <div class="tpl">
+    <div class="k-card"><span class="tag">Feed · Case study</span><p>Fondo Void + aurora. Mockup del proyecto centrado ocupando 70 %. Overline con industria y plataforma; H2 con el resultado (“+38 % retención”). Logo del cliente en blanco al 60 %.</p></div>
+    <div class="k-card"><span class="tag">Stories · 1080×1920</span><p>Zona segura: 250px arriba y abajo libres. Barra de progreso propia en gradiente para series. Plantillas: “Behind the build”, encuesta de diseño (A/B de paletas), sticker de enlace con fondo fucsia.</p></div>
+    <div class="k-card"><span class="tag">Portafolio · carrusel</span><p>Slide 1: portada con nombre del proyecto en Sora 800. 2: reto. 3–6: pantallas / piezas de marca. 7: stack técnico como chips mono. 8: resultado + CTA. Fondo continuo para que el swipe se sienta como un solo lienzo.</p></div>
+    <div class="k-card"><span class="tag">Carrusel educativo</span><p>Estilo “editor de código”: tarjeta Surface con tres puntos de ventana, numeración de línea en muted y snippet resaltado en morado/fucsia. Un concepto por slide, máximo 25 palabras. Último slide: “Guarda esto” + firma.</p></div>
+  </div>
+
+  <h3>Estilo fotográfico y mockups</h3>
+  <ul>
+    <li><strong>Mockups de dispositivos:</strong> iPhone y MacBook en acabado Space Black o Midnight, siempre mostrando la UI en dark mode. Ángulos 3/4 a 15–25° o frontal plano; nada de manos sosteniendo el teléfono en fondos de stock.</li>
+    <li><strong>Iluminación:</strong> fondo <code>#0A0812</code> con luz de borde (rim light) morada desde arriba a la izquierda y fucsia desde abajo a la derecha. Sombras de contacto suaves, sin reflejos especulares exagerados.</li>
+    <li><strong>Fotos de proyecto y equipo:</strong> low-key, alto contraste, grano fino. Etalonaje: sombras hacia violeta (hue ≈ 260°), luces neutras, saturación global −15 % para que solo los acentos de marca vibren.</li>
+    <li><strong>Overlay de marca:</strong> sobre cualquier foto con texto, gradiente <code>linear-gradient(180deg, transparent 30%, rgba(10,8,18,.9) 100%)</code>.</li>
+    <li><strong>Piezas de branding de clientes:</strong> mostrarlas sobre papel/objetos reales fotografiados en estudio oscuro (tarjetas, packaging), con la misma luz de borde para mantener la coherencia del feed.</li>
+    <li><strong>Herramientas sugeridas:</strong> Rotato o Shots.so para mockups animados; Figma con plantillas maestras por formato y componentes conectados a estos tokens.</li>
+  </ul>
+</section>
+
+<footer>Kroma Studio · Brand Book &amp; Design System v1.0 · Tokens listos para CSS / Tailwind / Figma Variables</footer>
+</div>
+
+<script>
+document.querySelectorAll('.copy').forEach(function(b){
+  b.addEventListener('click',function(){
+    var pre=b.parentElement.querySelector('pre');
+    var t=pre.textContent;
+    var done=function(){b.textContent='Copiado';setTimeout(function(){b.textContent='Copiar'},1500)};
+    try{navigator.clipboard.writeText(t).then(done,function(){sel(pre)})}catch(e){sel(pre)}
+  });
+});
+function sel(el){var r=document.createRange();r.selectNodeContents(el);var s=getSelection();s.removeAllRanges();s.addRange(r)}
+</script>

@@ -1,26 +1,354 @@
 @import "tailwindcss";
 
+/* ===== Kroma Studio · Design tokens (Brand Book v1.0) ===== */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  color-scheme: dark;
+
+  /* Backgrounds */
+  --k-bg: #0a0812;
+  --k-surface: #13101f;
+  --k-elevated: #1c1830;
+
+  /* Primary · Morados */
+  --k-purple: #7c3aed;
+  --k-electric: #a855f7;
+
+  /* Secondary · Fucsias */
+  --k-fuchsia: #ff2bd6;
+  --k-magenta: #e0007a;
+
+  /* Text */
+  --k-text: #f5f3ff;
+  --k-text-2: #b8b3cc;
+  --k-muted: #5e5873;
+
+  /* Líneas y glows */
+  --k-border: rgba(184, 179, 204, 0.12);
+  --k-border-accent: rgba(168, 85, 247, 0.18);
+  --k-glow-purple: 0 0 24px rgba(168, 85, 247, 0.35);
+  --k-glow-fuchsia: 0 0 24px rgba(255, 43, 214, 0.45);
+
+  /* Gradientes */
+  --k-grad-primary: linear-gradient(135deg, #7c3aed 0%, #c026d3 55%, #ff2bd6 100%);
+  --k-grad-text: linear-gradient(90deg, #a855f7 0%, #ff2bd6 100%);
+  --k-grad-aurora:
+    radial-gradient(120% 120% at 0% 0%, rgba(124, 58, 237, 0.55) 0%, transparent 55%),
+    radial-gradient(100% 100% at 100% 100%, rgba(255, 43, 214, 0.35) 0%, transparent 60%), #0a0812;
+
+  /* Tipografía (mobile-first con clamp) */
+  --fs-h1: clamp(2.5rem, 1.6rem + 3.2vw, 3.5rem);
+  --fs-h2: clamp(2rem, 1.5rem + 1.8vw, 2.5rem);
+  --fs-h3: clamp(1.5rem, 1.35rem + 0.6vw, 1.75rem);
+  --fs-h4: 1.25rem;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-k-bg: var(--k-bg);
+  --color-k-surface: var(--k-surface);
+  --color-k-elevated: var(--k-elevated);
+  --color-k-purple: var(--k-purple);
+  --color-k-electric: var(--k-electric);
+  --color-k-fuchsia: var(--k-fuchsia);
+  --color-k-magenta: var(--k-magenta);
+  --color-k-text: var(--k-text);
+  --color-k-text-2: var(--k-text-2);
+  --color-k-muted: var(--k-muted);
+  --color-k-border: var(--k-border);
+
+  --font-display: var(--font-sora), ui-sans-serif, system-ui, sans-serif;
+  --font-body: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains), ui-monospace, "SF Mono", Consolas, monospace;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* ===== Base ===== */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+  }
+
+  body {
+    background: var(--k-bg);
+    color: var(--k-text);
+    font: 400 1rem/1.6 var(--font-body);
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    color: var(--k-text);
+    text-wrap: balance;
+  }
+
+  ::selection {
+    background: var(--k-purple);
+    color: #fff;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--k-fuchsia);
+    outline-offset: 3px;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* ===== Componentes de marca ===== */
+@layer components {
+  .k-container {
+    width: 100%;
+    max-width: 72rem;
+    margin-inline: auto;
+    padding-inline: max(16px, env(safe-area-inset-left, 0px));
+  }
+  @media (min-width: 768px) {
+    .k-container {
+      padding-inline: 32px;
+    }
+  }
+
+  .k-h1 {
+    font: 800 var(--fs-h1) / 1.05 var(--font-display);
+    letter-spacing: -0.035em;
+  }
+  .k-h2 {
+    font: 700 var(--fs-h2) / 1.1 var(--font-display);
+    letter-spacing: -0.025em;
+  }
+  .k-h3 {
+    font: 600 var(--fs-h3) / 1.2 var(--font-display);
+    letter-spacing: -0.015em;
+  }
+  .k-h4 {
+    font: 600 var(--fs-h4) / 1.3 var(--font-display);
+  }
+
+  .k-eyebrow {
+    font: 500 0.75rem / 1.4 var(--font-mono);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--k-electric);
+  }
+
+  /* Brillo lento: el gradiente se desplaza en bucle de 8s, casi imperceptible */
+  .k-gradient-text {
+    background: linear-gradient(90deg, #a855f7 0%, #ff2bd6 50%, #a855f7 100%);
+    background-size: 200% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: k-shimmer 8s linear infinite;
+  }
+
+  /* Buttons */
+  .k-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font: 600 0.95rem/1 var(--font-body);
+    padding: 14px 24px;
+    min-height: 48px;
+    border-radius: 10px;
+    border: 1px solid transparent;
+    color: var(--k-text);
+    cursor: pointer;
+    text-align: center;
+    white-space: nowrap;
+    transition:
+      transform 0.15s ease,
+      box-shadow 0.2s ease,
+      background 0.2s ease,
+      border-color 0.2s ease,
+      color 0.2s ease;
+  }
+  .k-btn:disabled {
+    opacity: 0.38;
+    cursor: not-allowed;
+    box-shadow: none;
+    transform: none;
+    filter: grayscale(0.6);
+  }
+  .k-btn--sm {
+    padding: 10px 16px;
+    min-height: 40px;
+  }
+  .k-btn--lg {
+    padding: 18px 32px;
+  }
+
+  .k-btn--primary {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+    background: var(--k-grad-primary);
+  }
+  /* Destello que cruza el botón en hover */
+  .k-btn--primary::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(110deg, transparent 30%, rgba(255, 255, 255, 0.35) 50%, transparent 70%);
+    transform: translateX(-120%);
+    transition: transform 0.7s ease;
+  }
+  .k-btn--primary:hover::after {
+    transform: translateX(120%);
+  }
+  .k-btn--primary:hover {
+    box-shadow: var(--k-glow-fuchsia), inset 0 0 2px rgba(255, 255, 255, 0.4);
+    transform: translateY(-1px);
+  }
+  .k-btn--primary:active {
+    transform: scale(0.98);
+    box-shadow: 0 0 10px rgba(255, 43, 214, 0.3);
+  }
+
+  .k-btn--secondary {
+    background: transparent;
+    border-color: var(--k-purple);
+  }
+  .k-btn--secondary:hover {
+    border-color: var(--k-electric);
+    background: rgba(124, 58, 237, 0.12);
+    box-shadow: 0 0 18px rgba(168, 85, 247, 0.3);
+  }
+  .k-btn--secondary:active {
+    background: rgba(124, 58, 237, 0.22);
+    transform: scale(0.98);
+  }
+
+  .k-btn--ghost {
+    background: transparent;
+    color: var(--k-text-2);
+  }
+  .k-btn--ghost:hover {
+    color: var(--k-text);
+    background: var(--k-elevated);
+  }
+  .k-btn--ghost:active {
+    background: #252040;
+  }
+
+  .k-btn--cta {
+    background: var(--k-magenta);
+  }
+  .k-btn--cta:hover {
+    background: #f5148e;
+    box-shadow: 0 0 20px rgba(224, 0, 122, 0.5);
+  }
+  .k-btn--cta:active {
+    transform: scale(0.98);
+  }
+
+  /* Cards · vidrio oscuro */
+  .k-card {
+    position: relative;
+    background: linear-gradient(180deg, rgba(28, 24, 48, 0.7), rgba(19, 16, 31, 0.7));
+    border: 1px solid var(--k-border-accent);
+    border-radius: 16px;
+    padding: 20px;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    transition:
+      border-color 0.25s,
+      box-shadow 0.25s,
+      transform 0.25s;
+  }
+  @media (min-width: 768px) {
+    .k-card {
+      padding: 24px;
+    }
+  }
+  .k-card--hover:hover {
+    border-color: rgba(255, 43, 214, 0.45);
+    box-shadow:
+      0 0 0 1px rgba(255, 43, 214, 0.15),
+      0 20px 60px -20px rgba(124, 58, 237, 0.55);
+    transform: translateY(-2px);
+  }
+  /* Halo que sigue al cursor; --mx/--my los pone CardSpotlight.tsx */
+  .k-card--hover::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    pointer-events: none;
+    background: radial-gradient(
+      320px circle at var(--mx, 50%) var(--my, 50%),
+      rgba(255, 43, 214, 0.09),
+      rgba(124, 58, 237, 0.05) 40%,
+      transparent 70%
+    );
+    opacity: 0;
+    transition: opacity 0.3s;
+    z-index: 1;
+  }
+  .k-card--hover:hover::before {
+    opacity: 1;
+  }
+
+  .k-card--featured {
+    border: 1px solid transparent;
+    background:
+      linear-gradient(var(--k-surface), var(--k-surface)) padding-box,
+      var(--k-grad-primary) border-box;
+  }
+
+  .k-tag {
+    display: inline-block;
+    font: 500 0.68rem / 1.4 var(--font-mono);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 4px 8px;
+    border-radius: 6px;
+    background: rgba(255, 43, 214, 0.12);
+    color: var(--k-fuchsia);
+  }
+
+  .k-neon {
+    filter: drop-shadow(0 0 6px rgba(255, 43, 214, 0.6));
+  }
+
+  .k-input {
+    width: 100%;
+    border-radius: 10px;
+    border: 1px solid var(--k-border);
+    background: rgba(19, 16, 31, 0.8);
+    padding: 12px 16px;
+    font-size: 1rem; /* 16px evita el zoom automático en iOS */
+    color: var(--k-text);
+    transition:
+      border-color 0.2s,
+      box-shadow 0.2s;
+  }
+  .k-input::placeholder {
+    color: var(--k-muted);
+  }
+  .k-input:focus {
+    outline: none;
+    border-color: var(--k-electric);
+    box-shadow: var(--k-glow-purple);
+  }
+}
+
+@keyframes k-shimmer {
+  to {
+    background-position: -200% 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+    animation: none !important;
+  }
 }
