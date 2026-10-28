@@ -5,29 +5,29 @@ import { navLinks, socialAccounts } from "@/lib/site";
 
 export default function Footer() {
   return (
-    <footer className="border-t border-k-border">
-      <div className="k-container grid gap-10 py-12 md:grid-cols-[1.5fr_1fr_1fr]">
+    <footer className="border-t border-z-border">
+      <div className="z-container grid gap-10 py-12 md:grid-cols-[1.5fr_1fr_1fr]">
         <div>
           <div className="flex items-center gap-3">
             <Isotipo plate={false} className="h-10 w-10" />
-            <span className="font-display text-xl leading-none font-bold tracking-tight text-k-text">
-              KROMA
-              <span className="mt-1 block font-mono text-[0.6rem] font-normal tracking-[0.42em] text-k-text-2">
+            <span className="font-display text-xl leading-none font-bold tracking-tight text-z-text">
+              ZELTRA
+              <span className="mt-1 block font-mono text-[0.6rem] font-normal tracking-[0.42em] text-z-text-2">
                 STUDIO
               </span>
             </span>
           </div>
-          <p className="mt-4 max-w-xs text-sm text-k-text-2">
+          <p className="mt-4 max-w-xs text-sm text-z-text-2">
             Construimos la tecnología y diseñamos la imagen para hacer crecer negocios.
           </p>
         </div>
 
         <nav aria-label="Secciones">
-          <p className="k-eyebrow !text-k-muted">Navegación</p>
+          <p className="z-eyebrow !text-z-muted">Navegación</p>
           <ul className="mt-3 space-y-1">
             {navLinks.map((l) => (
               <li key={l.href}>
-                <a href={l.href} className="inline-block py-1.5 text-sm text-k-text-2 transition hover:text-k-text">
+                <a href={l.href} className="inline-block py-1.5 text-sm text-z-text-2 transition hover:text-z-text">
                   {l.label}
                 </a>
               </li>
@@ -36,25 +36,25 @@ export default function Footer() {
         </nav>
 
         <div>
-          <p className="k-eyebrow !text-k-muted">Instagram</p>
+          <p className="z-eyebrow !text-z-muted">Instagram</p>
           <ul className="mt-3 space-y-1">
               <li>
                 <a
-                  href={`https://instagram.com/kroma.studio}`}
+                  href="https://instagram.com/zeltra.studio"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 py-1.5 font-mono text-sm text-k-text-2 transition hover:text-k-fuchsia"
+                  className="inline-flex items-center gap-2 py-1.5 font-mono text-sm text-z-text-2 transition hover:text-z-fuchsia"
                 >
                   <InstagramIcon size={14} />
-                  kroma.studio
+                  @zeltra.studio
                 </a>
               </li>
           </ul>
         </div>
       </div>
-      <div className="border-t border-k-border">
-        <p className="k-container py-5 font-mono text-xs text-k-muted">
-          © 2026 Kroma Studio · Cada proyecto es el sueño de alguien. Lo tratamos así.
+      <div className="border-t border-z-border">
+        <p className="z-container py-5 font-mono text-xs text-z-muted">
+          © 2026 Zeltra Studio · Cada proyecto es el sueño de alguien. Lo tratamos así.
         </p>
       </div>
     </footer>

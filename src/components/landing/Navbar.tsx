@@ -31,16 +31,16 @@ export default function Navbar() {
       className={cn(
         "fixed inset-x-0 top-0 z-50 border-b transition-colors duration-300",
         scrolled || open
-          ? "border-k-border bg-[rgba(10,8,18,0.85)] backdrop-blur-xl"
+          ? "border-z-border bg-[rgba(10,8,18,0.85)] backdrop-blur-xl"
           : "border-transparent bg-transparent",
       )}
     >
-      <nav className="k-container flex h-16 items-center justify-between md:h-20" aria-label="Principal">
+      <nav className="z-container flex h-16 items-center justify-between md:h-20" aria-label="Principal">
         <a href="#inicio" className="flex items-center gap-2.5" onClick={() => setOpen(false)}>
           <Isotipo plate={false} className="h-8 w-8" />
-          <span className="font-display text-lg leading-none font-bold tracking-tight text-k-text">
-            KROMA
-            <span className="mt-1 block font-mono text-[0.55rem] font-normal tracking-[0.42em] text-k-text-2">
+          <span className="font-display text-lg leading-none font-bold tracking-tight text-z-text">
+            ZELTRA
+            <span className="mt-1 block font-mono text-[0.55rem] font-normal tracking-[0.42em] text-z-text-2">
               STUDIO
             </span>
           </span>
@@ -49,20 +49,20 @@ export default function Navbar() {
         <ul className="hidden items-center gap-1 md:flex">
           {navLinks.map((link) => (
             <li key={link.href}>
-              <a href={link.href} className="k-btn k-btn--ghost k-btn--sm">
+              <a href={link.href} className="z-btn z-btn--ghost z-btn--sm">
                 {link.label}
               </a>
             </li>
           ))}
         </ul>
 
-        <a href="#contacto" className="k-btn k-btn--primary k-btn--sm hidden md:inline-flex">
+        <a href="#contacto" className="z-btn z-btn--primary z-btn--sm hidden md:inline-flex">
           Empezar proyecto
         </a>
 
         <button
           type="button"
-          className="k-btn k-btn--ghost k-btn--sm -mr-2 md:hidden"
+          className="z-btn z-btn--ghost z-btn--sm -mr-2 md:hidden"
           aria-label={open ? "Cerrar menú" : "Abrir menú"}
           aria-expanded={open}
           aria-controls="mobile-menu"
@@ -75,14 +75,15 @@ export default function Navbar() {
       <AnimatePresence>
         {open && (
           <motion.div
+            key="mobile-menu"
             id="mobile-menu"
-            className="h-[calc(100dvh-4rem)] border-t border-k-border md:hidden"
+            className="h-[calc(100dvh-4rem)] border-t border-z-border md:hidden"
             initial={{ opacity: 0, y: -8 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -8 }}
             transition={{ duration: 0.2 }}
           >
-            <ul className="k-container flex flex-col gap-1 py-6">
+            <ul className="z-container flex flex-col gap-1 py-6">
               {navLinks.map((link, i) => (
                 <motion.li
                   key={link.href}
@@ -93,16 +94,16 @@ export default function Navbar() {
                   <a
                     href={link.href}
                     onClick={() => setOpen(false)}
-                    className="flex items-baseline gap-3 rounded-xl px-2 py-4 font-display text-2xl font-semibold text-k-text active:bg-k-elevated"
+                    className="flex items-baseline gap-3 rounded-xl px-2 py-4 font-display text-2xl font-semibold text-z-text active:bg-z-elevated"
                   >
-                    <span className="font-mono text-xs text-k-electric">0{i + 1}</span>
+                    <span className="font-mono text-xs text-z-electric">0{i + 1}</span>
                     {link.label}
                   </a>
                 </motion.li>
               ))}
             </ul>
-            <div className="k-container">
-              <a href="#contacto" onClick={() => setOpen(false)} className="k-btn k-btn--primary w-full">
+            <div className="z-container">
+              <a href="#contacto" onClick={() => setOpen(false)} className="z-btn z-btn--primary w-full">
                 Empezar proyecto
               </a>
             </div>

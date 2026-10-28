@@ -1,15 +1,16 @@
 "use client";
 
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Clock, Tag, Users } from "lucide-react";
 import AnimatedIsotipo from "./AnimatedIsotipo";
 
 const EASE = [0.16, 1, 0.3, 1] as const;
 
+// Beneficios para el cliente. Valores cortos y etiquetas de 2 líneas máx.: columnas parejas en móvil.
 const stats = [
-  { value: "Senior", label: "Ingeniería de software" },
-  { value: "360°", label: "Marca + web + redes" },
-  { value: "Diseño - Branding", label: "Diseñamos lo que necesitas, todo a tu medida" },
+  { icon: Clock, value: "24 h", label: "Te enviamos tu propuesta" },
+  { icon: Users, value: "1 equipo", label: "Marca, web/app y redes juntas" },
+  { icon: Tag, value: "Desde $60", label: "Planes claros, sin sorpresas" },
 ];
 
 const HEADLINE = "Construimos la tecnología y diseñamos la imagen";
@@ -58,14 +59,14 @@ export default function Hero() {
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0 -z-10 opacity-70"
-        style={{ background: "var(--k-grad-aurora)" }}
+        style={{ background: "var(--z-grad-aurora)" }}
       />
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0 -z-10 bg-[linear-gradient(rgba(184,179,204,.05)_1px,transparent_1px),linear-gradient(90deg,rgba(184,179,204,.05)_1px,transparent_1px)] [mask-image:radial-gradient(ellipse_at_center,black,transparent_75%)] bg-[size:48px_48px]"
       />
 
-      <div className="k-container flex flex-col gap-10 md:flex-row-reverse md:items-center md:justify-between md:gap-16">
+      <div className="z-container flex flex-col gap-10 md:flex-row-reverse md:items-center md:justify-between md:gap-16">
         <motion.div
           initial={{ opacity: 0, scale: 0.85, rotate: -6 }}
           animate={{ opacity: 1, scale: 1, rotate: 0 }}
@@ -74,7 +75,7 @@ export default function Hero() {
         >
           <motion.div
             aria-hidden
-            className="absolute inset-0 rounded-[28%] bg-k-fuchsia/30 blur-3xl"
+            className="absolute inset-0 rounded-[28%] bg-z-fuchsia/30 blur-3xl"
             animate={{ opacity: [0.6, 1, 0.6], scale: [0.95, 1.05, 0.95] }}
             transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
           />
@@ -95,29 +96,29 @@ export default function Hero() {
         >
           <motion.p
             variants={{ hidden: { opacity: 0, y: 16 }, show: { opacity: 1, y: 0 } }}
-            className="k-eyebrow"
+            className="z-eyebrow"
           >
             Agencia boutique · Venezuela → el mundo
           </motion.p>
           <motion.h1
             variants={{ hidden: {}, show: { transition: { staggerChildren: 0.05 } } }}
-            className="k-h1 mt-4"
+            className="z-h1 mt-4"
             aria-label={`${HEADLINE} ${HEADLINE_ACCENT}`}
           >
             {HEADLINE.split(" ").map((w, i) => (
               <Word key={i}>{w}</Word>
             ))}
             {HEADLINE_ACCENT.split(" ").map((w, i) => (
-              <Word key={`a${i}`} className="k-gradient-text">
+              <Word key={`a${i}`} className="z-gradient-text">
                 {w}
               </Word>
             ))}
           </motion.h1>
           <motion.p
             variants={{ hidden: { opacity: 0, y: 16 }, show: { opacity: 1, y: 0 } }}
-            className="mt-5 max-w-[60ch] text-[1.0625rem] leading-relaxed text-k-text-2 md:text-lg"
+            className="mt-5 max-w-[60ch] text-[1.0625rem] leading-relaxed text-z-text-2 md:text-lg"
           >
-            Kroma Studio une ingeniería de software senior y diseño industrial para crear productos
+            Zeltra Studio une ingeniería de software senior y diseño industrial para crear productos
             digitales que venden: landing pages, e-commerce, branding, redes y software a medida.
           </motion.p>
 
@@ -125,25 +126,32 @@ export default function Hero() {
             variants={{ hidden: { opacity: 0, y: 16 }, show: { opacity: 1, y: 0 } }}
             className="mt-8 flex flex-col gap-3 sm:flex-row"
           >
-            <a href="#contacto" className="k-btn k-btn--primary k-btn--lg group">
+            <a href="#contacto" className="z-btn z-btn--primary z-btn--lg group">
               Empezar proyecto
               <ArrowRight size={18} strokeWidth={1.75} className="transition-transform group-hover:translate-x-1" />
             </a>
-            <a href="#proyectos" className="k-btn k-btn--secondary k-btn--lg">
+            <a href="#proyectos" className="z-btn z-btn--secondary z-btn--lg">
               Ver portafolio
             </a>
           </motion.div>
 
           <motion.dl
-            variants={{ hidden: { opacity: 0 }, show: { opacity: 1, transition: { duration: 0.8 } } }}
-            className="mt-12 grid grid-cols-3 gap-4 border-t border-k-border pt-6"
+            variants={{ hidden: {}, show: { transition: { staggerChildren: 0.12, delayChildren: 0.1 } } }}
+            className="mt-10 grid grid-cols-3 divide-x divide-z-border overflow-hidden rounded-2xl border border-z-border bg-[rgba(19,16,31,.55)] backdrop-blur md:mt-12"
           >
-            {stats.map((s) => (
-              <div key={s.label}>
-                <dt className="sr-only">{s.label}</dt>
-                <dd className="font-display text-xl font-bold text-k-text md:text-2xl">{s.value}</dd>
-                <dd className="mt-1 text-xs leading-snug text-k-text-2 md:text-sm">{s.label}</dd>
-              </div>
+            {stats.map(({ icon: Icon, value, label }) => (
+              <motion.div
+                key={label}
+                variants={{ hidden: { opacity: 0, y: 12 }, show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: EASE } } }}
+                className="flex flex-col items-center px-2 py-4 text-center md:items-start md:px-5 md:py-5 md:text-left"
+              >
+                <Icon size={18} strokeWidth={1.5} className="z-neon text-z-fuchsia" aria-hidden />
+                <dt className="sr-only">{label}</dt>
+                <dd className="mt-2 font-display text-lg leading-none font-bold whitespace-nowrap text-z-text md:text-2xl">
+                  {value}
+                </dd>
+                <dd className="mt-1.5 text-[0.7rem] leading-snug text-z-text-2 md:text-sm">{label}</dd>
+              </motion.div>
             ))}
           </motion.dl>
         </motion.div>

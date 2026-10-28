@@ -34,7 +34,7 @@ function wordmarkSvg(asset: BrandAsset) {
   const w = asset.wordmark!;
   const inner = asset.svg.replace(/^<svg[^>]*>/, "").replace(/<\/svg>$/, "");
   const text = (x: number, y: number, anchor: string) =>
-    `<text x="${x}" y="${y}" text-anchor="${anchor}" font-family="Sora, sans-serif" font-weight="800" font-size="56" letter-spacing="-1.1" fill="${w.color}">KROMA</text>` +
+    `<text x="${x}" y="${y}" text-anchor="${anchor}" font-family="Sora, sans-serif" font-weight="800" font-size="56" letter-spacing="-1.1" fill="${w.color}">ZELTRA</text>` +
     `<text x="${x}" y="${y + 30}" text-anchor="${anchor}" font-family="'JetBrains Mono', monospace" font-size="18" letter-spacing="7.5" fill="${w.sub}">STUDIO</text>`;
   return w.layout === "horizontal"
     ? `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 120"><g>${inner}</g>${text(122, 64, "start")}</svg>`
@@ -83,7 +83,7 @@ export async function downloadPng(asset: BrandAsset, size = 1024) {
 
     ctx.font = `800 ${big}px ${display}`;
     spacing(-big * 0.02);
-    const kromaW = ctx.measureText("KROMA").width;
+    const zeltraW = ctx.measureText("ZELTRA").width;
     const pad = icon * 0.1;
 
     const draw = (x: number, y: number, align: CanvasTextAlign) => {
@@ -92,7 +92,7 @@ export async function downloadPng(asset: BrandAsset, size = 1024) {
       ctx.fillStyle = w.color;
       ctx.font = `800 ${big}px ${display}`;
       spacing(-big * 0.02);
-      ctx.fillText("KROMA", x, y);
+      ctx.fillText("ZELTRA", x, y);
       ctx.fillStyle = w.sub;
       ctx.font = `400 ${small}px ${mono}`;
       spacing(small * 0.42);
@@ -100,12 +100,12 @@ export async function downloadPng(asset: BrandAsset, size = 1024) {
     };
 
     if (w.layout === "horizontal") {
-      canvas.width = Math.ceil(icon + kromaW + pad * 3);
+      canvas.width = Math.ceil(icon + zeltraW + pad * 3);
       canvas.height = Math.ceil(icon);
       ctx.drawImage(img, 0, 0, icon, icon);
       draw(icon + pad * 0.4, icon * 0.53, "left");
     } else {
-      canvas.width = Math.ceil(Math.max(icon, kromaW) + pad * 2);
+      canvas.width = Math.ceil(Math.max(icon, zeltraW) + pad * 2);
       canvas.height = Math.ceil(icon + big + small * 2.6);
       ctx.drawImage(img, (canvas.width - icon) / 2, 0, icon, icon);
       draw(canvas.width / 2, icon + big * 0.85, "center");

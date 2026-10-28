@@ -97,7 +97,7 @@ export default function Carousel({ label, children, itemClassName }: CarouselPro
   };
 
   const arrowClass =
-    "absolute top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-[rgba(168,85,247,.45)] bg-k-elevated/90 text-k-text shadow-[0_8px_24px_-6px_rgba(0,0,0,.6)] backdrop-blur transition-all duration-300 hover:border-k-fuchsia hover:shadow-[var(--k-glow-fuchsia)] active:scale-95 md:h-12 md:w-12";
+    "absolute top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-[rgba(168,85,247,.45)] bg-z-elevated/90 text-z-text shadow-[0_8px_24px_-6px_rgba(0,0,0,.6)] backdrop-blur transition-all duration-300 hover:border-z-fuchsia hover:shadow-[var(--z-glow-fuchsia)] active:scale-95 md:h-12 md:w-12";
 
   return (
     <div role="region" aria-roledescription="carrusel" aria-label={label} className="relative">
@@ -143,8 +143,8 @@ export default function Carousel({ label, children, itemClassName }: CarouselPro
 
       <div className="mt-3 flex items-center justify-between gap-4">
         <div className="flex items-center gap-3">
-          <span className="font-mono text-xs text-k-text-2 tabular-nums">
-            <span className="text-k-text">{String(active + 1).padStart(2, "0")}</span> / {String(items.length).padStart(2, "0")}
+          <span className="font-mono text-xs text-z-text-2 tabular-nums">
+            <span className="text-z-text">{String(active + 1).padStart(2, "0")}</span> / {String(items.length).padStart(2, "0")}
           </span>
           <div className="flex items-center gap-1.5">
             {items.map((_, i) => (
@@ -159,7 +159,7 @@ export default function Carousel({ label, children, itemClassName }: CarouselPro
                 <span
                   className={cn(
                     "block h-1.5 rounded-full transition-all duration-300",
-                    i === active ? "w-6 bg-[image:var(--k-grad-primary)]" : "w-1.5 bg-k-muted hover:bg-k-text-2",
+                    i === active ? "w-6 bg-[image:var(--z-grad-primary)]" : "w-1.5 bg-z-muted hover:bg-z-text-2",
                   )}
                 />
               </button>
@@ -171,10 +171,11 @@ export default function Carousel({ label, children, itemClassName }: CarouselPro
         <AnimatePresence>
           {!interacted && canNext && (
             <motion.span
+              key="swipe-hint"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="flex items-center gap-1 font-mono text-xs tracking-[0.1em] text-k-electric uppercase md:hidden"
+              className="flex items-center gap-1 font-mono text-xs tracking-[0.1em] text-z-electric uppercase md:hidden"
             >
               Desliza
               <motion.span animate={{ x: [0, 5, 0] }} transition={{ duration: 1.2, repeat: Infinity, ease: "easeInOut" }}>

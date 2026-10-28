@@ -251,7 +251,7 @@ export const serviceBlocks: ServiceBlock[] = [
   {
     id: "combos",
     icon: "layers",
-    title: "Combos 360° Kroma",
+    title: "Combos 360° Zeltra",
     subtitle: "Marca, web y redes trabajando como un solo sistema. Más impacto, mejor precio.",
     plans: [
       {

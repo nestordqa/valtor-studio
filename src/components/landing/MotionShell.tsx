@@ -11,7 +11,7 @@ function ScrollProgress() {
     <motion.div
       aria-hidden
       className="fixed inset-x-0 top-0 z-[60] h-0.5 origin-left"
-      style={{ scaleX, background: "var(--k-grad-primary)" }}
+      style={{ scaleX, background: "var(--z-grad-primary)" }}
     />
   );
 }
@@ -21,7 +21,7 @@ function useCardSpotlight() {
   useEffect(() => {
     const onMove = (e: PointerEvent) => {
       if (e.pointerType !== "mouse") return;
-      const card = (e.target as Element | null)?.closest<HTMLElement>(".k-card--hover");
+      const card = (e.target as Element | null)?.closest<HTMLElement>(".z-card--hover");
       if (!card) return;
       const r = card.getBoundingClientRect();
       card.style.setProperty("--mx", `${e.clientX - r.left}px`);

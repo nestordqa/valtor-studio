@@ -34,7 +34,7 @@ function AssetPreview({ asset }: { asset: BrandAsset }) {
         className={cn("font-display text-3xl leading-none font-extrabold tracking-[-0.02em]", w.layout === "vertical" && "text-center")}
         style={{ color: w.color }}
       >
-        KROMA
+        ZELTRA
         <span className="mt-1.5 block font-mono text-[0.32em] font-normal tracking-[0.42em]" style={{ color: w.sub }}>
           STUDIO
         </span>
@@ -55,28 +55,28 @@ function AssetCard({ asset }: { asset: BrandAsset }) {
   };
 
   return (
-    <article className="k-card flex flex-col gap-4 !p-4 md:!p-5">
+    <article className="z-card flex flex-col gap-4 !p-4 md:!p-5">
       <div
         className={cn(
           "flex min-h-40 items-center justify-center rounded-xl p-6 [&_svg]:h-full [&_svg]:w-full",
-          asset.stage === "light" ? "bg-[#F5F3FF]" : "bg-k-bg",
+          asset.stage === "light" ? "bg-[#F5F3FF]" : "bg-z-bg",
         )}
       >
         <AssetPreview asset={asset} />
       </div>
       <div>
-        <h3 className="k-h4 !text-base">{asset.name}</h3>
-        <p className="text-sm text-k-text-2">{asset.use}</p>
+        <h3 className="z-h4 !text-base">{asset.name}</h3>
+        <p className="text-sm text-z-text-2">{asset.use}</p>
       </div>
       <div className="mt-auto grid grid-cols-3 gap-2">
-        <button type="button" className="k-btn k-btn--secondary k-btn--sm !px-2" onClick={() => downloadSvg(asset)}>
+        <button type="button" className="z-btn z-btn--secondary z-btn--sm !px-2" onClick={() => downloadSvg(asset)}>
           SVG
         </button>
-        <button type="button" disabled={busy} className="k-btn k-btn--primary k-btn--sm !px-2" onClick={() => png(1024)}>
+        <button type="button" disabled={busy} className="z-btn z-btn--primary z-btn--sm !px-2" onClick={() => png(1024)}>
           <Download size={14} strokeWidth={1.75} />
           PNG
         </button>
-        <button type="button" disabled={busy} className="k-btn k-btn--ghost k-btn--sm border-k-border !px-2" onClick={() => png(2048)}>
+        <button type="button" disabled={busy} className="z-btn z-btn--ghost z-btn--sm border-z-border !px-2" onClick={() => png(2048)}>
           PNG 2×
         </button>
       </div>
@@ -89,27 +89,27 @@ export default function BrandKit() {
 
   return (
     <div className="relative isolate min-h-dvh">
-      <div aria-hidden className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-[520px] opacity-60" style={{ background: "var(--k-grad-aurora)" }} />
+      <div aria-hidden className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-[520px] opacity-60" style={{ background: "var(--z-grad-aurora)" }} />
 
-      <header className="k-container flex h-16 items-center justify-between">
-        <Link href="/" className="k-btn k-btn--ghost k-btn--sm -ml-3">
+      <header className="z-container flex h-16 items-center justify-between">
+        <Link href="/" className="z-btn z-btn--ghost z-btn--sm -ml-3">
           <ArrowLeft size={16} strokeWidth={1.5} />
           Volver al sitio
         </Link>
-        <span className="font-mono text-xs text-k-muted">v1.0 · 2026</span>
+        <span className="font-mono text-xs text-z-muted">v1.0 · 2026</span>
       </header>
 
       <main>
-        <SectionReveal className="k-container flex flex-col gap-6 pt-8 pb-14 md:flex-row md:items-center md:gap-10 md:pt-16">
+        <SectionReveal className="z-container flex flex-col gap-6 pt-8 pb-14 md:flex-row md:items-center md:gap-10 md:pt-16">
           <Reveal>
             <Isotipo className="h-24 w-24 md:h-36 md:w-36" />
           </Reveal>
           <Reveal>
-            <p className="k-eyebrow">Brand Kit & Design System</p>
-            <h1 className="k-h1 mt-3">
-              Kroma <span className="k-gradient-text">Studio</span>
+            <p className="z-eyebrow">Brand Kit & Design System</p>
+            <h1 className="z-h1 mt-3">
+              Zeltra <span className="z-gradient-text">Studio</span>
             </h1>
-            <p className="mt-4 max-w-[60ch] text-k-text-2">
+            <p className="mt-4 max-w-[60ch] text-z-text-2">
               Logos, colores, tipografía y componentes oficiales. Toca cualquier botón para descargar
               en tu teléfono o computadora, o un color para copiar su código.
             </p>
@@ -117,11 +117,11 @@ export default function BrandKit() {
         </SectionReveal>
 
         {/* Logos */}
-        <SectionReveal id="logos" className="k-container border-t border-k-border py-14">
+        <SectionReveal id="logos" className="z-container border-t border-z-border py-14">
           <Reveal>
-            <p className="k-eyebrow">01 · Logotipo</p>
-            <h2 className="k-h2 mt-3">Descarga los logos</h2>
-            <p className="mt-3 max-w-[65ch] text-k-text-2">
+            <p className="z-eyebrow">01 · Logotipo</p>
+            <h2 className="z-h2 mt-3">Descarga los logos</h2>
+            <p className="mt-3 max-w-[65ch] text-z-text-2">
               PNG con fondo transparente (1024 px o 2048 px) y SVG vectorial. En el teléfono se abre el
               menú para guardar en Fotos o Archivos.
             </p>
@@ -134,43 +134,43 @@ export default function BrandKit() {
             ))}
           </div>
           <Reveal className="mt-8">
-            <ul className="grid gap-3 text-sm text-k-text-2 md:grid-cols-3">
-              <li className="k-card !p-4"><strong className="text-k-text">Área de respeto:</strong> 1x (ancho del fuste) en los cuatro lados; 2x en gran formato.</li>
-              <li className="k-card !p-4"><strong className="text-k-text">Tamaño mínimo:</strong> isologo 96 px / 25 mm; isotipo 16 px / 5 mm.</li>
-              <li className="k-card !p-4"><strong className="text-k-text">Prohibido:</strong> rotar, deformar, cambiar el orden del gradiente o el color del nodo.</li>
+            <ul className="grid gap-3 text-sm text-z-text-2 md:grid-cols-3">
+              <li className="z-card !p-4"><strong className="text-z-text">Área de respeto:</strong> 1x (alto de la barra superior de la Z) en los cuatro lados; 2x en gran formato.</li>
+              <li className="z-card !p-4"><strong className="text-z-text">Tamaño mínimo:</strong> isologo 96 px / 25 mm; isotipo 16 px / 5 mm.</li>
+              <li className="z-card !p-4"><strong className="text-z-text">Prohibido:</strong> rotar, deformar, cambiar el orden del gradiente o el color del nodo.</li>
             </ul>
           </Reveal>
         </SectionReveal>
 
         {/* Colores */}
-        <SectionReveal id="color" className="k-container border-t border-k-border py-14">
+        <SectionReveal id="color" className="z-container border-t border-z-border py-14">
           <Reveal>
-            <p className="k-eyebrow">02 · Color</p>
-            <h2 className="k-h2 mt-3">Paleta oficial</h2>
-            <p className="mt-3 max-w-[65ch] text-k-text-2">70 % neutros oscuros · 20 % texto · 10 % acentos. Toca un color para copiar el HEX.</p>
+            <p className="z-eyebrow">02 · Color</p>
+            <h2 className="z-h2 mt-3">Paleta oficial</h2>
+            <p className="mt-3 max-w-[65ch] text-z-text-2">70 % neutros oscuros · 20 % texto · 10 % acentos. Toca un color para copiar el HEX.</p>
           </Reveal>
           <div className="mt-8 space-y-8">
             {colorGroups.map((g) => (
               <Reveal key={g.title}>
-                <h3 className="font-mono text-xs tracking-[0.14em] text-k-muted uppercase">{g.title}</h3>
+                <h3 className="font-mono text-xs tracking-[0.14em] text-z-muted uppercase">{g.title}</h3>
                 <div className="mt-3 grid grid-cols-2 gap-3 md:grid-cols-3">
                   {g.colors.map((c) => (
                     <button
                       key={c.hex}
                       type="button"
                       onClick={() => copy(c.hex)}
-                      className="group overflow-hidden rounded-xl border border-k-border bg-k-surface text-left transition hover:border-[rgba(255,43,214,.45)]"
+                      className="group overflow-hidden rounded-xl border border-z-border bg-z-surface text-left transition hover:border-[rgba(255,43,214,.45)]"
                     >
                       <span className="relative block h-20 md:h-24" style={{ background: c.hex }}>
                         <span className="absolute top-2 right-2 flex h-7 w-7 items-center justify-center rounded-md bg-black/40 text-white opacity-80 backdrop-blur group-hover:opacity-100">
                           {copied === c.hex ? <Check size={14} /> : <Copy size={14} />}
                         </span>
                       </span>
-                      <span className="block p-3 font-mono text-[0.7rem] leading-relaxed text-k-text-2">
-                        <b className="block font-body text-sm text-k-text">{c.name}</b>
+                      <span className="block p-3 font-mono text-[0.7rem] leading-relaxed text-z-text-2">
+                        <b className="block font-body text-sm text-z-text">{c.name}</b>
                         {c.hex}
                         <br />
-                        <span className="text-k-muted">{c.token}</span>
+                        <span className="text-z-muted">{c.token}</span>
                       </span>
                     </button>
                   ))}
@@ -178,56 +178,56 @@ export default function BrandKit() {
               </Reveal>
             ))}
             <Reveal>
-              <h3 className="font-mono text-xs tracking-[0.14em] text-k-muted uppercase">Gradientes</h3>
+              <h3 className="font-mono text-xs tracking-[0.14em] text-z-muted uppercase">Gradientes</h3>
               <div className="mt-3 grid gap-3 md:grid-cols-3">
-                <div className="flex h-24 items-end rounded-xl p-3 font-mono text-xs text-white" style={{ background: "var(--k-grad-primary)" }}>--k-grad-primary</div>
-                <div className="flex h-24 items-end rounded-xl border border-k-border bg-k-bg p-3 font-display text-2xl font-extrabold"><span className="k-gradient-text">--k-grad-text</span></div>
-                <div className="flex h-24 items-end rounded-xl p-3 font-mono text-xs text-white" style={{ background: "var(--k-grad-aurora)" }}>--k-grad-aurora</div>
+                <div className="flex h-24 items-end rounded-xl p-3 font-mono text-xs text-white" style={{ background: "var(--z-grad-primary)" }}>--z-grad-primary</div>
+                <div className="flex h-24 items-end rounded-xl border border-z-border bg-z-bg p-3 font-display text-2xl font-extrabold"><span className="z-gradient-text">--z-grad-text</span></div>
+                <div className="flex h-24 items-end rounded-xl p-3 font-mono text-xs text-white" style={{ background: "var(--z-grad-aurora)" }}>--z-grad-aurora</div>
               </div>
             </Reveal>
           </div>
         </SectionReveal>
 
         {/* Tipografía */}
-        <SectionReveal id="type" className="k-container border-t border-k-border py-14">
+        <SectionReveal id="type" className="z-container border-t border-z-border py-14">
           <Reveal>
-            <p className="k-eyebrow">03 · Tipografía</p>
-            <h2 className="k-h2 mt-3">Sora · Manrope · JetBrains Mono</h2>
+            <p className="z-eyebrow">03 · Tipografía</p>
+            <h2 className="z-h2 mt-3">Sora · Manrope · JetBrains Mono</h2>
           </Reveal>
-          <Reveal className="mt-8 overflow-hidden rounded-2xl border border-k-border">
+          <Reveal className="mt-8 overflow-hidden rounded-2xl border border-z-border">
             {[
-              { spec: "H1 · Sora 800", el: <p className="k-h1">Build. Brand. Grow.</p> },
-              { spec: "H2 · Sora 700", el: <p className="k-h2">Apps que se ven como se sienten</p> },
-              { spec: "H3 · Sora 600", el: <p className="k-h3">Arquitectura cloud escalable</p> },
-              { spec: "Body · Manrope 400", el: <p className="text-k-text-2">Diseñamos y desarrollamos productos digitales completos, desde el logo hasta el deploy.</p> },
-              { spec: "Label · JetBrains Mono 500", el: <p className="k-eyebrow">Case study · 04</p> },
+              { spec: "H1 · Sora 800", el: <p className="z-h1">Build. Brand. Grow.</p> },
+              { spec: "H2 · Sora 700", el: <p className="z-h2">Apps que se ven como se sienten</p> },
+              { spec: "H3 · Sora 600", el: <p className="z-h3">Arquitectura cloud escalable</p> },
+              { spec: "Body · Manrope 400", el: <p className="text-z-text-2">Diseñamos y desarrollamos productos digitales completos, desde el logo hasta el deploy.</p> },
+              { spec: "Label · JetBrains Mono 500", el: <p className="z-eyebrow">Case study · 04</p> },
             ].map((r) => (
-              <div key={r.spec} className="grid gap-2 border-b border-k-border p-4 last:border-b-0 md:grid-cols-[180px_1fr] md:gap-6 md:p-5">
-                <span className="font-mono text-[0.7rem] text-k-muted">{r.spec}</span>
+              <div key={r.spec} className="grid gap-2 border-b border-z-border p-4 last:border-b-0 md:grid-cols-[180px_1fr] md:gap-6 md:p-5">
+                <span className="font-mono text-[0.7rem] text-z-muted">{r.spec}</span>
                 <div className="min-w-0 [overflow-wrap:anywhere]">{r.el}</div>
               </div>
             ))}
           </Reveal>
           <Reveal className="mt-6 flex flex-col gap-3 sm:flex-row">
-            <a className="k-btn k-btn--secondary" href="https://fonts.google.com/specimen/Sora" target="_blank" rel="noopener noreferrer">Descargar Sora</a>
-            <a className="k-btn k-btn--secondary" href="https://fonts.google.com/specimen/Manrope" target="_blank" rel="noopener noreferrer">Descargar Manrope</a>
-            <a className="k-btn k-btn--secondary" href="https://fonts.google.com/specimen/JetBrains+Mono" target="_blank" rel="noopener noreferrer">Descargar JetBrains Mono</a>
+            <a className="z-btn z-btn--secondary" href="https://fonts.google.com/specimen/Sora" target="_blank" rel="noopener noreferrer">Descargar Sora</a>
+            <a className="z-btn z-btn--secondary" href="https://fonts.google.com/specimen/Manrope" target="_blank" rel="noopener noreferrer">Descargar Manrope</a>
+            <a className="z-btn z-btn--secondary" href="https://fonts.google.com/specimen/JetBrains+Mono" target="_blank" rel="noopener noreferrer">Descargar JetBrains Mono</a>
           </Reveal>
         </SectionReveal>
 
         {/* Componentes */}
-        <SectionReveal id="ui" className="k-container border-t border-k-border py-14">
+        <SectionReveal id="ui" className="z-container border-t border-z-border py-14">
           <Reveal>
-            <p className="k-eyebrow">04 · Componentes</p>
-            <h2 className="k-h2 mt-3">Botones y cards</h2>
-            <p className="mt-3 text-k-text-2">Interactúa con ellos: hover, active y foco son los oficiales.</p>
+            <p className="z-eyebrow">04 · Componentes</p>
+            <h2 className="z-h2 mt-3">Botones y cards</h2>
+            <p className="mt-3 text-z-text-2">Interactúa con ellos: hover, active y foco son los oficiales.</p>
           </Reveal>
           <Reveal className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-            <button type="button" className="k-btn k-btn--primary">Empezar proyecto</button>
-            <button type="button" className="k-btn k-btn--secondary">Ver portafolio</button>
-            <button type="button" className="k-btn k-btn--ghost">Saber más</button>
-            <button type="button" className="k-btn k-btn--cta">Solicitar propuesta</button>
-            <button type="button" className="k-btn k-btn--primary" disabled>Deshabilitado</button>
+            <button type="button" className="z-btn z-btn--primary">Empezar proyecto</button>
+            <button type="button" className="z-btn z-btn--secondary">Ver portafolio</button>
+            <button type="button" className="z-btn z-btn--ghost">Saber más</button>
+            <button type="button" className="z-btn z-btn--cta">Solicitar propuesta</button>
+            <button type="button" className="z-btn z-btn--primary" disabled>Deshabilitado</button>
           </Reveal>
           <Reveal className="mt-8 grid gap-4 md:grid-cols-3">
             {[
@@ -235,43 +235,43 @@ export default function BrandKit() {
               ["Diseño", "Identidad visual", "Branding completo: logo, color, tipografía y guías de aplicación."],
               ["Cloud", "Arquitectura", "Infraestructura escalable, serverless y observabilidad."],
             ].map(([tag, title, text]) => (
-              <div key={title} className="k-card k-card--hover">
-                <span className="k-tag">{tag}</span>
-                <h3 className="k-h4 mt-3">{title}</h3>
-                <p className="mt-2 text-sm text-k-text-2">{text}</p>
+              <div key={title} className="z-card z-card--hover">
+                <span className="z-tag">{tag}</span>
+                <h3 className="z-h4 mt-3">{title}</h3>
+                <p className="mt-2 text-sm text-z-text-2">{text}</p>
               </div>
             ))}
           </Reveal>
         </SectionReveal>
 
         {/* Tokens */}
-        <SectionReveal id="tokens" className="k-container border-t border-k-border py-14">
+        <SectionReveal id="tokens" className="z-container border-t border-z-border py-14">
           <Reveal>
-            <p className="k-eyebrow">05 · Tokens</p>
-            <h2 className="k-h2 mt-3">CSS listo para usar</h2>
+            <p className="z-eyebrow">05 · Tokens</p>
+            <h2 className="z-h2 mt-3">CSS listo para usar</h2>
           </Reveal>
           <Reveal className="mt-6 flex flex-col gap-3 sm:flex-row">
-            <button type="button" className="k-btn k-btn--primary" onClick={() => downloadText(tokensCss, "kroma-tokens.css", "text/css")}>
+            <button type="button" className="z-btn z-btn--primary" onClick={() => downloadText(tokensCss, "zeltra-tokens.css", "text/css")}>
               <Download size={16} strokeWidth={1.75} />
-              Descargar kroma-tokens.css
+              Descargar zeltra-tokens.css
             </button>
-            <button type="button" className="k-btn k-btn--secondary" onClick={() => copy(tokensCss)}>
+            <button type="button" className="z-btn z-btn--secondary" onClick={() => copy(tokensCss)}>
               {copied === tokensCss ? <Check size={16} /> : <Copy size={16} strokeWidth={1.5} />}
               {copied === tokensCss ? "Copiado" : "Copiar CSS"}
             </button>
           </Reveal>
           <Reveal className="mt-6">
-            <pre className="max-h-96 overflow-auto rounded-xl border border-k-border bg-k-surface p-4 font-mono text-xs leading-relaxed text-k-text-2 md:p-5">
+            <pre className="max-h-96 overflow-auto rounded-xl border border-z-border bg-z-surface p-4 font-mono text-xs leading-relaxed text-z-text-2 md:p-5">
               {tokensCss}
             </pre>
           </Reveal>
         </SectionReveal>
 
         {/* Redes */}
-        <SectionReveal id="social" className="k-container border-t border-k-border py-14">
+        <SectionReveal id="social" className="z-container border-t border-z-border py-14">
           <Reveal>
-            <p className="k-eyebrow">06 · Redes sociales</p>
-            <h2 className="k-h2 mt-3">Instagram como vitrina</h2>
+            <p className="z-eyebrow">06 · Redes sociales</p>
+            <h2 className="z-h2 mt-3">Instagram como vitrina</h2>
           </Reveal>
           <Reveal className="mt-6 grid gap-3 md:grid-cols-2">
             {[
@@ -280,17 +280,17 @@ export default function BrandKit() {
               ["Mix", "40 % casos · 30 % educación · 20 % proceso · 10 % oferta."],
               ["Firma", "Isotipo 48 px abajo a la izquierda y el @ en JetBrains Mono 20 px a la derecha, a 64 px de los bordes."],
             ].map(([t, d]) => (
-              <div key={t} className="k-card !p-4">
-                <span className="k-tag">{t}</span>
-                <p className="mt-2 text-sm text-k-text-2">{d}</p>
+              <div key={t} className="z-card !p-4">
+                <span className="z-tag">{t}</span>
+                <p className="mt-2 text-sm text-z-text-2">{d}</p>
               </div>
             ))}
           </Reveal>
         </SectionReveal>
       </main>
 
-      <footer className="k-container border-t border-k-border py-8 font-mono text-xs text-k-muted">
-        Kroma Studio · Brand Kit v1.0
+      <footer className="z-container border-t border-z-border py-8 font-mono text-xs text-z-muted">
+        Zeltra Studio · Brand Kit v1.0
       </footer>
     </div>
   );

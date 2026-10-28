@@ -24,7 +24,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Kroma Studio — Software y diseño para hacer crecer tu negocio",
+  title: "Zeltra Studio — Software y diseño para hacer crecer tu negocio",
   description:
     "Agencia boutique de desarrollo de software y diseño de producto digital. Landing pages, e-commerce, branding, redes sociales y software a medida.",
 };
