@@ -35,15 +35,12 @@ export default function About() {
             Dos expertos, <span className="z-gradient-text">un mismo objetivo: tu crecimiento</span>
           </h2>
           <p className="mt-4 max-w-2xl text-z-text-2">
-            Somos una dupla venezolana: uno construye la tecnología y la otra diseña la imagen. Juntos
-            te entregamos todo lo que tu negocio necesita para verse profesional en internet y vender
-            más, sin que tengas que entender nada técnico.
-          </p>
-          <p className="mt-3 max-w-2xl text-sm text-z-text-2">
-            Hasta nuestro logo lo cuenta: la <span className="font-semibold text-z-text">Z</span> de Zeltra
-            está hecha con la <span className="font-semibold text-z-text">N</span> de Nestor y la{" "}
-            <span className="font-semibold text-z-text">V</span> de Valentina, unidas por un punto blanco en
-            el centro.
+            Somos <span className="font-semibold text-z-text">Nestor</span>, Ingeniero de Software
+            Senior con más de 8 años construyendo productos digitales, y{" "}
+            <span className="font-semibold text-z-text">Valentina</span>, Ingeniera en Diseño
+            Industrial con más de 5 años creando marcas e identidades visuales. Juntos sumamos +13 años
+            de experiencia para que tu negocio se vea profesional, inspire confianza y venda más en
+            internet. Tú te enfocas en tus clientes; nosotros nos encargamos de todo lo técnico.
           </p>
         </div>
         <Isotipo className="hidden h-28 w-28 md:block" />
