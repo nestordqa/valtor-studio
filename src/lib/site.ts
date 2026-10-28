@@ -53,7 +53,7 @@ export const projects: Project[] = [
     title: "TorkeOS · Software para talleres",
     description:
       "App web progresiva (se instala en el teléfono como una app) para que los talleres mecánicos agenden citas y gestionen todo su trabajo desde un solo lugar.",
-    href: "https://auto-shop-saas-mu.vercel.app/",
+    href: "https://torkeos.com/",
     tag: "Software a medida",
     stack: ["App instalable", "Citas", "Gestión de taller"],
     screenshot: "/screenshots/apps/torkeos.png",
@@ -94,7 +94,7 @@ export const projects: Project[] = [
     title: "Landing Industrial · Estufas Mérida",
     description:
       "Página para un fabricante local: muestra sus productos con claridad, transmite confianza y le trae pedidos por WhatsApp.",
-    href: "https://estufas-merida.netlify.app/",
+    href: "https://estufas-merida.com/",
     tag: "Landing comercial",
     stack: ["Página de ventas", "Catálogo", "Pedidos"],
     screenshot: "/screenshots/apps/estufas-merida-web.png",
