@@ -1,7 +1,6 @@
-import Link from "next/link";
 import Isotipo from "./Isotipo";
 import { InstagramIcon } from "./BrandIcons";
-import { navLinks, socialAccounts } from "@/lib/site";
+import { INSTAGRAM_URL, navLinks } from "@/lib/site";
 
 export default function Footer() {
   return (
@@ -11,14 +10,14 @@ export default function Footer() {
           <div className="flex items-center gap-3">
             <Isotipo plate={false} className="h-10 w-10" />
             <span className="font-display text-xl leading-none font-bold tracking-tight text-z-text">
-              ZELTRA
+              VALTOR
               <span className="mt-1 block font-mono text-[0.6rem] font-normal tracking-[0.42em] text-z-text-2">
                 STUDIO
               </span>
             </span>
           </div>
           <p className="mt-4 max-w-xs text-sm text-z-text-2">
-            Construimos la tecnología y diseñamos la imagen para hacer crecer negocios.
+            Ingeniería y Diseño desde el Punto Cero. Construimos la tecnología y diseñamos la imagen para hacer crecer negocios.
           </p>
         </div>
 
@@ -40,13 +39,13 @@ export default function Footer() {
           <ul className="mt-3 space-y-1">
               <li>
                 <a
-                  href="https://instagram.com/zeltra.studio"
+                  href={INSTAGRAM_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 py-1.5 font-mono text-sm text-z-text-2 transition hover:text-z-fuchsia"
                 >
                   <InstagramIcon size={14} />
-                  @zeltra.studio
+                  @valtor.studio
                 </a>
               </li>
           </ul>
@@ -54,7 +53,7 @@ export default function Footer() {
       </div>
       <div className="border-t border-z-border">
         <p className="z-container py-5 font-mono text-xs text-z-muted">
-          © 2026 Zeltra Studio · Cada proyecto es el sueño de alguien. Lo tratamos así.
+          © 2026 Valtor Studio · Cada proyecto es el sueño de alguien. Lo tratamos así.
         </p>
       </div>
     </footer>

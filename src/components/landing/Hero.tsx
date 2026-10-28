@@ -118,7 +118,7 @@ export default function Hero() {
             variants={{ hidden: { opacity: 0, y: 16 }, show: { opacity: 1, y: 0 } }}
             className="mt-5 max-w-[60ch] text-[1.0625rem] leading-relaxed text-z-text-2 md:text-lg"
           >
-            Zeltra Studio une ingeniería de software senior y diseño industrial para crear productos
+            Valtor Studio une ingeniería de software senior y diseño industrial para crear productos
             digitales que venden: landing pages, e-commerce, branding, redes y software a medida.
           </motion.p>
 

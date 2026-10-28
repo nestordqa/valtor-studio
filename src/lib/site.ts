@@ -5,6 +5,15 @@
 export const WHATSAPP_NUMBER = (process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? "").replace(/\D/g, "");
 export const CONTACT_EMAIL = "kromastudio.dev@gmail.com";
 
+// URL pública del sitio (sin "/" final). Se configura con NEXT_PUBLIC_SITE_URL; se usa en
+// canonical, Open Graph, sitemap, robots y datos estructurados.
+export const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL ?? "https://valtorstudio.com").replace(/\/+$/, "");
+export const SITE_NAME = "Valtor Studio";
+export const SITE_TITLE = "Valtor Studio · Diseño web, branding y software a medida en Venezuela";
+export const SITE_DESCRIPTION =
+  "Agencia boutique en Venezuela: landing pages, tiendas online, branding, gestión de redes sociales, invitaciones de boda digitales y software a medida. Planes desde USD 60.";
+export const INSTAGRAM_URL = "https://instagram.com/valtor.studio";
+
 export function whatsappLink(message: string) {
   return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
 }
@@ -251,7 +260,7 @@ export const serviceBlocks: ServiceBlock[] = [
   {
     id: "combos",
     icon: "layers",
-    title: "Combos 360° Zeltra",
+    title: "Combos 360° Valtor",
     subtitle: "Marca, web y redes trabajando como un solo sistema. Más impacto, mejor precio.",
     plans: [
       {

@@ -34,7 +34,7 @@ function AssetPreview({ asset }: { asset: BrandAsset }) {
         className={cn("font-display text-3xl leading-none font-extrabold tracking-[-0.02em]", w.layout === "vertical" && "text-center")}
         style={{ color: w.color }}
       >
-        ZELTRA
+        VALTOR
         <span className="mt-1.5 block font-mono text-[0.32em] font-normal tracking-[0.42em]" style={{ color: w.sub }}>
           STUDIO
         </span>
@@ -107,7 +107,7 @@ export default function BrandKit() {
           <Reveal>
             <p className="z-eyebrow">Brand Kit & Design System</p>
             <h1 className="z-h1 mt-3">
-              Zeltra <span className="z-gradient-text">Studio</span>
+              Valtor <span className="z-gradient-text">Studio</span>
             </h1>
             <p className="mt-4 max-w-[60ch] text-z-text-2">
               Logos, colores, tipografía y componentes oficiales. Toca cualquier botón para descargar
@@ -251,9 +251,9 @@ export default function BrandKit() {
             <h2 className="z-h2 mt-3">CSS listo para usar</h2>
           </Reveal>
           <Reveal className="mt-6 flex flex-col gap-3 sm:flex-row">
-            <button type="button" className="z-btn z-btn--primary" onClick={() => downloadText(tokensCss, "zeltra-tokens.css", "text/css")}>
+            <button type="button" className="z-btn z-btn--primary" onClick={() => downloadText(tokensCss, "valtor-tokens.css", "text/css")}>
               <Download size={16} strokeWidth={1.75} />
-              Descargar zeltra-tokens.css
+              Descargar valtor-tokens.css
             </button>
             <button type="button" className="z-btn z-btn--secondary" onClick={() => copy(tokensCss)}>
               {copied === tokensCss ? <Check size={16} /> : <Copy size={16} strokeWidth={1.5} />}
@@ -290,7 +290,7 @@ export default function BrandKit() {
       </main>
 
       <footer className="z-container border-t border-z-border py-8 font-mono text-xs text-z-muted">
-        Zeltra Studio · Brand Kit v1.0
+        Valtor Studio · Brand Kit v1.0
       </footer>
     </div>
   );

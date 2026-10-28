@@ -21,7 +21,7 @@ export default function Contact() {
       return;
     }
     setError("");
-    const text = `Hola Zeltra Studio 👋\nSoy ${name}.\nServicio: ${service}\n\n${message}`;
+    const text = `Hola Valtor Studio 👋\nSoy ${name}.\nServicio: ${service}\n\n${message}`;
     window.open(whatsappLink(text), "_blank", "noopener,noreferrer");
   }
 
@@ -47,7 +47,7 @@ export default function Contact() {
               </p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
                 <a
-                  href={whatsappLink("Hola Zeltra Studio 👋 Quiero cotizar un proyecto.")}
+                  href={whatsappLink("Hola Valtor Studio 👋 Quiero cotizar un proyecto.")}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="z-btn z-btn--primary z-btn--lg"
@@ -56,7 +56,7 @@ export default function Contact() {
                   Escribir por WhatsApp
                 </a>
                 {/* <a
-                  href={`mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent("Nuevo proyecto con Zeltra")}`}
+                  href={`mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent("Nuevo proyecto con Valtor")}`}
                   className="z-btn z-btn--secondary z-btn--lg"
                 >
                   <Mail size={18} strokeWidth={1.5} />

@@ -1,23 +1,22 @@
 import { useId } from "react";
 
-// La Z de Zeltra: N rotada (barras + diagonal) con la V tallada en la barra superior.
-export const Z_TOP = "M26 26H50L60 37L70 26H94V40H26Z";
-export const Z_DIAGONAL = "M80 40H94L40 80H26Z";
-export const Z_BOTTOM = { x: 26, y: 80, width: 68, height: 14 };
+// Monograma V+T de Valtor: la diagonal (diseño) y el asta (ingeniería) forman la V; el asta con su barra es la T.
+export const V_PATH = "M22 22H42L68 65V40H59.9L49 22H98V40H86V98H68Z";
+export const V_NODE = { cx: 77, cy: 31, r: 6 };
 
 type IsotipoProps = {
   className?: string;
-  /** Muestra la placa redondeada Surface detrás de la Z. */
+  /** Muestra la placa redondeada Surface detrás de la V. */
   plate?: boolean;
 };
 
 export default function Isotipo({ className, plate = true }: IsotipoProps) {
-  // Un id por instancia: varias Z en la misma página no comparten el gradiente.
+  // Un id por instancia: varias V en la misma página no comparten el gradiente.
   const gradId = `zg-${useId().replace(/:/g, "")}`;
   const fill = `url(#${gradId})`;
 
   return (
-    <svg viewBox="0 0 120 120" className={className} role="img" aria-label="Isotipo Zeltra Studio">
+    <svg viewBox="0 0 120 120" className={className} role="img" aria-label="Isotipo Valtor Studio">
       <defs>
         <linearGradient id={gradId} x1="0" y1="0" x2="1" y2="1">
           <stop offset="0" stopColor="#7C3AED" />
@@ -26,10 +25,8 @@ export default function Isotipo({ className, plate = true }: IsotipoProps) {
         </linearGradient>
       </defs>
       {plate && <rect width="120" height="120" rx="28" fill="#13101F" />}
-      <path d={Z_TOP} fill={fill} />
-      <path d={Z_DIAGONAL} fill={fill} />
-      <rect {...Z_BOTTOM} fill={fill} />
-      <circle cx="60" cy="60" r="6" fill="#F5F3FF" />
+      <path d={V_PATH} fill={fill} />
+      <circle {...V_NODE} fill="#F5F3FF" />
     </svg>
   );
 }

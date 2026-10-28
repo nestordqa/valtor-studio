@@ -10,7 +10,7 @@ export default function SocialAccounts() {
       <Reveal>
         <div className="z-card">
           <p className="z-eyebrow">Redes que llevamos</p>
-          <h3 className="z-h4 mt-2">Marcas que ya crecen con Zeltra</h3>
+          <h3 className="z-h4 mt-2">Marcas que ya crecen con Valtor</h3>
           <p className="mt-2 text-sm text-z-text-2">
             Estrategia, diseño y contenido gestionados por nuestro equipo, todos los días.
           </p>

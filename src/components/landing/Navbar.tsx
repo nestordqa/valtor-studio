@@ -39,7 +39,7 @@ export default function Navbar() {
         <a href="#inicio" className="flex items-center gap-2.5" onClick={() => setOpen(false)}>
           <Isotipo plate={false} className="h-8 w-8" />
           <span className="font-display text-lg leading-none font-bold tracking-tight text-z-text">
-            ZELTRA
+            VALTOR
             <span className="mt-1 block font-mono text-[0.55rem] font-normal tracking-[0.42em] text-z-text-2">
               STUDIO
             </span>

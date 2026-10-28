@@ -45,7 +45,7 @@ function PlanCard({ plan }: { plan: Plan }) {
         <p className="font-mono text-[0.68rem] tracking-[0.14em] text-z-muted uppercase">Inversión</p>
         <p className="mt-0.5 font-display text-lg font-bold text-z-text">{plan.investment}</p>
         <a
-          href={whatsappLink(`Hola Zeltra Studio 👋 Me interesa el plan "${plan.name}". ¿Podemos conversar?`)}
+          href={whatsappLink(`Hola Valtor Studio 👋 Me interesa el plan "${plan.name}". ¿Podemos conversar?`)}
           target="_blank"
           rel="noopener noreferrer"
           className={cn("z-btn mt-3 w-full", plan.featured ? "z-btn--primary" : "z-btn--secondary")}
@@ -224,7 +224,7 @@ export default function Services() {
         <Reveal>
           <p className="z-eyebrow">02 · Servicios & Combos</p>
           <h2 className="z-h2 mt-3">
-            El menú completo <span className="z-gradient-text">Zeltra</span>
+            El menú completo <span className="z-gradient-text">Valtor</span>
           </h2>
           <p className="mt-4 max-w-2xl text-z-text-2">
             Planes claros, en dólares y orientados a resultados.{" "}

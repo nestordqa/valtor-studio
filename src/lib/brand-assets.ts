@@ -2,10 +2,10 @@
 
 const GRAD = `<defs><linearGradient id="zg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7C3AED"/><stop offset=".55" stop-color="#C026D3"/><stop offset="1" stop-color="#FF2BD6"/></linearGradient></defs>`;
 
-// La Z: barra superior con corte en V + diagonal + base, y el nodo opcional al centro.
+// Monograma V+T: la diagonal y el asta forman la V; el asta con su barra es la T. Nodo opcional en el cruce de la T.
 const Z = (fill: string, node: string | null) =>
-  `<path d="M26 26H50L60 37L70 26H94V40H26Z" fill="${fill}"/><path d="M80 40H94L40 80H26Z" fill="${fill}"/><rect x="26" y="80" width="68" height="14" fill="${fill}"/>` +
-  (node ? `<circle cx="60" cy="60" r="6" fill="${node}"/>` : "");
+  `<path d="M22 22H42L68 65V40H59.9L49 22H98V40H86V98H68Z" fill="${fill}"/>` +
+  (node ? `<circle cx="77" cy="31" r="6" fill="${node}"/>` : "");
 
 const svg = (body: string) =>
   `<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 120 120">${GRAD}${body}</svg>`;
@@ -23,7 +23,7 @@ export type BrandAsset = {
 
 export const brandAssets: BrandAsset[] = [
   {
-    id: "zeltra-isologo-horizontal",
+    id: "valtor-isologo-horizontal",
     name: "Isologo horizontal",
     use: "Principal · web, firmas, presentaciones",
     svg: svg(Z("url(#zg)", "#F5F3FF")),
@@ -31,7 +31,7 @@ export const brandAssets: BrandAsset[] = [
     wordmark: { layout: "horizontal", color: "#F5F3FF", sub: "#B8B3CC" },
   },
   {
-    id: "zeltra-isologo-vertical",
+    id: "valtor-isologo-vertical",
     name: "Isologo vertical",
     use: "Portadas, merch, stories",
     svg: svg(Z("url(#zg)", "#F5F3FF")),
@@ -39,37 +39,37 @@ export const brandAssets: BrandAsset[] = [
     wordmark: { layout: "vertical", color: "#F5F3FF", sub: "#B8B3CC" },
   },
   {
-    id: "zeltra-isotipo",
+    id: "valtor-isotipo",
     name: "Isotipo · placa",
     use: "Isotipo con placa Surface",
     svg: svg(`<rect width="120" height="120" rx="28" fill="#13101F"/>${Z("url(#zg)", "#F5F3FF")}`),
     stage: "dark",
   },
   {
-    id: "zeltra-isotipo-transparente",
+    id: "valtor-isotipo-transparente",
     name: "Isotipo · transparente",
     use: "Sobre fondos Void / Surface",
     svg: svg(Z("url(#zg)", "#F5F3FF")),
     stage: "dark",
   },
   {
-    id: "zeltra-app-icon",
+    id: "valtor-app-icon",
     name: "App icon",
     use: "Ícono de app, PWA, launcher",
     svg: svg(`<rect width="120" height="120" rx="28" fill="url(#zg)"/>${Z("#0A0812", "#F5F3FF")}`),
     stage: "dark",
   },
   {
-    id: "zeltra-avatar-rrss",
+    id: "valtor-avatar-rrss",
     name: "Avatar RRSS",
     use: "Foto de perfil Instagram, TikTok, WhatsApp",
     svg: svg(
-      `<circle cx="60" cy="60" r="60" fill="#13101F"/>${Z("url(#zg)", null)}`,
+      `<circle cx="60" cy="60" r="60" fill="#13101F"/>${Z("url(#zg)", "#F5F3FF")}`,
     ),
     stage: "dark",
   },
   {
-    id: "zeltra-favicon",
+    id: "valtor-favicon",
     name: "Favicon",
     use: "16 / 32px · sin nodo, fondo morado sólido",
     svg: svg(
@@ -78,7 +78,7 @@ export const brandAssets: BrandAsset[] = [
     stage: "dark",
   },
   {
-    id: "zeltra-monocromo-claro",
+    id: "valtor-monocromo-claro",
     name: "Monocromo sobre claro",
     use: "Documentos, facturas, impresión",
     svg: svg(Z("#0A0812", "#E0007A")),
@@ -99,7 +99,7 @@ export const colorGroups = [
   {
     title: "Morados",
     colors: [
-      { name: "Zeltra Purple", token: "--z-purple", hex: "#7C3AED", rgb: "124, 58, 237" },
+      { name: "Valtor Purple", token: "--z-purple", hex: "#7C3AED", rgb: "124, 58, 237" },
       { name: "Electric Violet", token: "--z-electric", hex: "#A855F7", rgb: "168, 85, 247" },
     ],
   },
@@ -120,7 +120,7 @@ export const colorGroups = [
   },
 ];
 
-export const tokensCss = `/* ===== Zeltra Studio · Design tokens v1.0 ===== */
+export const tokensCss = `/* ===== Valtor Studio · Design tokens v1.0 ===== */
 @import url('https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
 
 :root {
