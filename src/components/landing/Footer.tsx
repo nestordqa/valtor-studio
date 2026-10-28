@@ -32,36 +32,29 @@ export default function Footer() {
                 </a>
               </li>
             ))}
-            <li>
-              <Link href="/brand" className="inline-block py-1.5 text-sm text-k-text-2 transition hover:text-k-text">
-                Brand Kit
-              </Link>
-            </li>
           </ul>
         </nav>
 
         <div>
           <p className="k-eyebrow !text-k-muted">Instagram</p>
           <ul className="mt-3 space-y-1">
-            {/* {socialAccounts.map((a) => (
-              <li key={a.handle}>
+              <li>
                 <a
-                  href={`https://instagram.com/${a.handle.slice(1)}`}
+                  href={`https://instagram.com/kroma.studio}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 py-1.5 font-mono text-sm text-k-text-2 transition hover:text-k-fuchsia"
                 >
                   <InstagramIcon size={14} />
-                  {a.handle}
+                  kroma.studio
                 </a>
               </li>
-            ))} */}
           </ul>
         </div>
       </div>
       <div className="border-t border-k-border">
         <p className="k-container py-5 font-mono text-xs text-k-muted">
-          © 2026 Kroma Studio · Hecho en Venezuela con código y diseño.
+          © 2026 Kroma Studio · Cada proyecto es el sueño de alguien. Lo tratamos así.
         </p>
       </div>
     </footer>

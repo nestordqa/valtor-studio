@@ -1,5 +1,6 @@
 import SectionReveal, { Reveal } from "./SectionReveal";
 import { InstagramIcon } from "./BrandIcons";
+import Carousel from "./Carousel";
 import { socialAccounts } from "@/lib/site";
 
 export default function SocialAccounts() {
@@ -13,10 +14,14 @@ export default function SocialAccounts() {
           <p className="mt-2 text-sm text-k-text-2">
             Estrategia, diseño y contenido gestionados por nuestro equipo, todos los días.
           </p>
-          <ul className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-5">
+            <Carousel
+              label="Redes que llevamos"
+              itemClassName="basis-[78%] sm:basis-[45%] lg:basis-[calc((100%-3rem)/4)]"
+            >
             {socialAccounts.map((acc) => (
-              <li key={acc.handle}>
                 <a
+                  key={acc.handle}
                   href={`https://instagram.com/${acc.handle.slice(1)}`}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -37,9 +42,9 @@ export default function SocialAccounts() {
                   </span>
                   <span className="text-sm leading-snug text-k-text-2">{acc.description}</span>
                 </a>
-              </li>
             ))}
-          </ul>
+            </Carousel>
+          </div>
         </div>
       </Reveal>
     </SectionReveal>

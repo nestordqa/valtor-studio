@@ -3,19 +3,19 @@ import SectionReveal, { Reveal } from "./SectionReveal";
 import Isotipo from "./Isotipo";
 
 const duo = [
+    {
+    icon: PenTool,
+    role: "Diseñadora Industrial",
+    piece: "Lo que enamora",
+    text: "Se encarga de que tu marca se vea profesional y se recuerde: tu logo, tus colores, tus publicaciones y cada detalle que hace que un cliente confíe en ti a primera vista.",
+    skills: ["Logos", "Imagen de marca", "Redes sociales", "Empaques"],
+  },
   {
     icon: Laptop,
     role: "Ingeniero de Software",
     piece: "Lo que no se ve",
     text: "Se encarga de que tu página o tienda funcione perfecto: que cargue rápido, que no se caiga, que se vea bien en cualquier teléfono y que tus clientes puedan comprarte o escribirte sin complicaciones.",
     skills: ["Páginas web", "Tiendas online", "Apps", "Pagos en línea"],
-  },
-  {
-    icon: PenTool,
-    role: "Diseñadora Industrial",
-    piece: "Lo que enamora",
-    text: "Se encarga de que tu marca se vea profesional y se recuerde: tu logo, tus colores, tus publicaciones y cada detalle que hace que un cliente confíe en ti a primera vista.",
-    skills: ["Logos", "Imagen de marca", "Redes sociales", "Empaques"],
   },
 ];
 
