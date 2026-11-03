@@ -11,7 +11,7 @@ export const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL ?? "https://valtorstud
 export const SITE_NAME = "Valtor Studio";
 export const SITE_TITLE = "Valtor Studio · Diseño web, branding y software a medida en Venezuela";
 export const SITE_DESCRIPTION =
-  "Agencia boutique en Venezuela: landing pages, tiendas online, branding, gestión de redes sociales, invitaciones de boda digitales y software a medida. Planes desde USD 60.";
+  "Agencia boutique en Venezuela: landing pages, tiendas online, branding, gestión de redes sociales, invitaciones de boda digitales y software a medida. Planes desde USD 50.";
 export const INSTAGRAM_URL = "https://instagram.com/valtor.studio";
 
 export function whatsappLink(message: string) {
@@ -126,53 +126,43 @@ export const serviceBlocks: ServiceBlock[] = [
     subtitle: "Gestión estratégica de contenido para marcas que quieren presencia real y ventas.",
     plans: [
       {
-        name: "Primer Paso",
-        audience: "Emprendimientos que quieren empezar a tener presencia en redes con un presupuesto mínimo.",
-        includes: [
-          "Optimización básica de perfil y biografía.",
-          "8 publicaciones mensuales con diseño de tu marca.",
-          "2 videos cortos (Reels/TikToks) al mes.",
-        ],
-        investment: "USD 70 / mes",
-      },
-      {
         name: "Presencia Esencial",
-        audience: "Negocios que inician y necesitan verse profesionales sin perder foco operativo.",
+        audience: "Marcas que quieren mantenerse activas, profesionales y visibles sin perder la constancia.",
         includes: [
-          "Optimización completa de perfil y biografía.",
-          "Diseño propio para tus publicaciones, coherente con tu marca.",
-          "12 publicaciones mensuales con diseño y copy persuasivo.",
-          "4 videos cortos (Reels/TikToks) editados con tu material.",
-          "Programación y gestión de contenido.",
+          "5 historias a la semana (20 al mes).",
+          "2 posts diseñados estratégicamente.",
+          "2 reels cortos para captar la atención.",
+          "Textos (copies) listos para usar y sugerencia de hashtags.",
+          "Tú publicas: te entregamos todo el material listo y organizado.",
+          "Con gestión (+USD 25): programamos, publicamos y atendemos tus mensajes y comentarios de 10:00 a.m. a 7:00 p.m.",
         ],
-        investment: "USD 130 / mes",
+        investment: "USD 50 / mes · USD 75 con gestión",
       },
       {
-        name: "Crecimiento Imparable",
-        audience: "Negocios que ya venden y quieren escalar su posicionamiento en nichos competitivos.",
+        name: "Impulso Comercial",
+        audience: "Marcas con mayor movimiento que necesitan presencia constante y un ritmo de venta más dinámico.",
         includes: [
-          "Todo lo del plan Presencia Esencial (de esta sección).",
-          "16 a 20 publicaciones mensuales (educación, autoridad y venta).",
-          "8 videos cortos pensados para enganchar y que los vean completos.",
-          "1 visita al mes a tu local para fotos de tus productos.",
-          "Gestión de tus cuentas: subimos y programamos todo tu contenido.",
-          "Publicidad paga en Instagram o Facebook: 1 campaña al mes.",
+          "2 a 3 historias dinámicas diarias (6 días a la semana).",
+          "4 posts al mes (1 por semana).",
+          "4 reels al mes (1 por semana), atractivos y dinámicos.",
+          "Textos (copies) orientados a la conversión y la venta.",
+          "Tú publicas: te entregamos el contenido organizado por carpetas o fechas.",
+          "Con gestión (+USD 35): subimos todo por ti y atendemos tus redes de 10:00 a.m. a 7:00 p.m.",
         ],
-        investment: "USD 250 / mes",
+        investment: "USD 85 / mes · USD 120 con gestión",
         featured: true,
       },
       {
-        name: "Contenido en tu Local",
-        audience: "Negocios con productos o espacio físico que quieren el plan más completo, con fotos reales hechas en su local.",
+        name: "Gestión Total / Autoridad",
+        audience: "Marcas que quieren delegar el 100 % de su comunicación y posicionarse como referentes en su sector.",
         includes: [
-          "Todo lo del plan Crecimiento Imparable (de esta sección).",
-          "2 visitas al mes a tu local o tienda (en lugar de 1).",
-          "Sesión de fotos de tus productos en cada visita.",
-          "Fotos editadas con el estilo de tu marca, listas para publicar.",
-          "Clips cortos de video para reels y stories.",
-          "Más publicidad paga en Instagram o Facebook: 2 campañas al mes (en lugar de 1).",
+          "Historias diarias (6 días a la semana) con enfoque comercial y de interacción.",
+          "6 posts al mes.",
+          "6 reels al mes para mostrar tus productos y generar comunidad.",
+          "Planificación visual completa y asesoría de marca.",
+          "Gestión incluida: diseño, producción, programación, publicación y atención de mensajes de 10:00 a.m. a 7:00 p.m.",
         ],
-        investment: "USD 290 / mes",
+        investment: "USD 150 / mes · gestión incluida",
       },
     ],
   },
@@ -191,7 +181,7 @@ export const serviceBlocks: ServiceBlock[] = [
           "Botones para que te escriban directo a WhatsApp.",
           "Dominio y hosting incluidos por 1 año.",
         ],
-        investment: "USD 180 · pago único",
+        investment: "USD 150 · pago único",
         featured: true,
       },
       {
@@ -204,7 +194,7 @@ export const serviceBlocks: ServiceBlock[] = [
           "Alta de tu negocio en Google Maps (Perfil de Empresa).",
           "Estadísticas de visitas para saber cuánta gente te encuentra.",
         ],
-        investment: "USD 290 · pago único",
+        investment: "USD 240 · pago único",
       },
       {
         name: "E-commerce / Tienda Online a Medida",
@@ -215,7 +205,7 @@ export const serviceBlocks: ServiceBlock[] = [
           "Panel sencillo para cambiar precios y existencias tú mismo.",
           "Pagos con Zelle, Binance Pay, Pago Móvil y tarjetas.",
         ],
-        investment: "USD 780 · pago único",
+        investment: "USD 650 · pago único",
       },
       {
         name: "E-commerce + SEO",
@@ -225,7 +215,7 @@ export const serviceBlocks: ServiceBlock[] = [
           "SEO de tienda y de cada producto para aparecer en búsquedas de Google.",
           "Aviso por correo o WhatsApp de cada pedido nuevo.",
         ],
-        investment: "USD 950 · pago único",
+        investment: "USD 800 · pago único",
       },
     ],
   },
@@ -270,7 +260,7 @@ export const serviceBlocks: ServiceBlock[] = [
           "Plan Branding Exprés de la sección Identidad de Marca: logo, paleta y tipografías.",
           "Plan Landing Page de Alta Conversión de la sección Desarrollo Web.",
         ],
-        investment: "USD 350 · pago único",
+        investment: "USD 290 · pago único",
       },
       {
         name: "Landing + Marca + Redes",
@@ -278,9 +268,9 @@ export const serviceBlocks: ServiceBlock[] = [
         includes: [
           "Plan Branding Exprés de la sección Identidad de Marca.",
           "Plan Landing Page de Alta Conversión de la sección Desarrollo Web.",
-          "Primer mes del plan Presencia Esencial de la sección Redes Sociales (12 posts + 4 reels).",
+          "Primer mes del plan Presencia Esencial de la sección Redes Sociales, con gestión (20 historias, 2 posts y 2 reels).",
         ],
-        investment: "USD 520 · pago único",
+        investment: "USD 360 · pago único",
         featured: true,
       },
       {
@@ -290,10 +280,10 @@ export const serviceBlocks: ServiceBlock[] = [
           "Plan Identidad de Marca 360° Corporativa de la sección Identidad de Marca.",
           "Plan E-commerce + SEO de la sección Desarrollo Web: tienda con landing, pagos y productos en Google.",
           "Aviso por correo o WhatsApp de cada pedido nuevo.",
-          "Primer mes del plan Contenido en tu Local de la sección Redes Sociales: 2 visitas con sesión de fotos, reels, gestión de cuentas y 2 campañas de publicidad paga.",
+          "Primer mes del plan Gestión Total / Autoridad de la sección Redes Sociales: historias diarias, 6 posts, 6 reels y gestión completa de tus cuentas.",
           "Las redes están incluidas solo durante el primer mes; luego puedes continuar con cualquier plan mensual.",
         ],
-        investment: "USD 1.350 · pago único",
+        investment: "USD 1.100 · pago único",
       },
       {
         name: "Invitación Esencial",
@@ -362,7 +352,7 @@ export const serviceBlocks: ServiceBlock[] = [
           "Diseño completo para que lo veas y apruebes antes de construirlo.",
           "Soporte y mejoras después del lanzamiento.",
         ],
-        investment: "Desde USD 650 · cotización a medida",
+        investment: "Desde USD 550 · cotización a medida",
         featured: true,
       },
     ],
@@ -396,9 +386,9 @@ export const socialAccounts = [
     niche: "Academia de inglés",
     description: "Contenido educativo que muestra su método y atrae nuevos alumnos cada mes.",
   },
-  {
-    handle: "@itas_ve",
-    niche: "Accesorios para damas",
-    description: "Feed coherente con su marca y publicaciones que llevan a sus clientas a comprar.",
-  }
+  // {
+  //   handle: "@itas_ve",
+  //   niche: "Accesorios para damas",
+  //   description: "Feed coherente con su marca y publicaciones que llevan a sus clientas a comprar.",
+  // }
 ];

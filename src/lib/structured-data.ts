@@ -33,7 +33,7 @@ export function buildJsonLd() {
         ...(WHATSAPP_NUMBER && { telephone: `+${WHATSAPP_NUMBER}` }),
         address: { "@type": "PostalAddress", addressCountry: "VE" },
         areaServed: ["VE", "Worldwide"],
-        priceRange: "USD 60 – USD 1.350",
+        priceRange: "USD 50 – USD 1.100",
         sameAs: [INSTAGRAM_URL],
         hasOfferCatalog: {
           "@type": "OfferCatalog",
